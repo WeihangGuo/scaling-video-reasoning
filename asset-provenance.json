@@ -1,0 +1,781 @@
+{
+  "scaling-observations.csv": {
+    "sha256": "c02d4ac84fa114928f5a930768fa412177781920490efba0f875e91d4dc5b6e8"
+  },
+  "compute-checkpoints.csv": {
+    "sha256": "12b8da68055c2f5aa83f55336d2fa8afbb80f513f55cbf9b7dcc0afc3b358830"
+  },
+  "state-guidance.csv": {
+    "sha256": "d46b452184f482c66594efdd828d2345ec5529bd72af157ef0ef3f8132a1e20a"
+  },
+  "state-guidance-per-action.csv": {
+    "sha256": "594f6e69789eb89c83203631746f10ea9fce3722f16d7678c58fb8377fdee7d2"
+  },
+  "compute-extrapolation-checkpoints.csv": {
+    "sha256": "12b8da68055c2f5aa83f55336d2fa8afbb80f513f55cbf9b7dcc0afc3b358830"
+  },
+  "compute-extrapolation-curves.csv": {
+    "sha256": "fb0238edf876ede2a3f7ed73948d485091ce4a93a0a4a761baf10f722a254992"
+  },
+  "compute-extrapolation-fits.json": {
+    "sha256": "486aaa47a70d4f1a2b1458e3d885e8bac731a3d331b78e967d09f089ee102703"
+  },
+  "compute-extrapolation-frontier.csv": {
+    "sha256": "f4a12f0410f74e1378e0a1413f4b5d80912243b1a999bfef1cda0e39ebdca733"
+  },
+  "training-progression.json": {
+    "sha256": "503a932e62f5304a4a836cc54ad33195d74bf4a1d25a980b6f2e5584b3f9a473"
+  },
+  "static/js/observation-data.js": {
+    "sha256": "815172042d582e5e5e62d6f7c8b93ed4152506884e30a94c64111236dc044570"
+  },
+  "static/js/rollout-gallery-data.js": {
+    "sha256": "499b680a9411674d70a9c53b83383e21ca2b1fe881e0880630e062693accea5b"
+  },
+  "static/figures/compute-extrapolation.svg": {
+    "sha256": "ab17e272932a7d0550e5675d71537cee8ee6a6703f34a885ce5fb285a77a901c"
+  },
+  "static/rollouts/ground-truth-01.webp": {
+    "sha256": "2a1130fcf90142a718cb9facdc514946f8dee73146bda09a2eff421d2871b639"
+  },
+  "static/rollouts/ground-truth-02.webp": {
+    "sha256": "2f7d3ccdf157a181f31457a039615bdcf74e0eab17af06f79651879d31895afe"
+  },
+  "static/rollouts/ground-truth-03.webp": {
+    "sha256": "a76bdce26975e041667690a035673f348800ebc3634157f51b84d01c84b670a2"
+  },
+  "static/rollouts/rollout-01.webp": {
+    "sha256": "55de327f26ffa8cda1f6e9f4240e55f3c99f5a81a98d3432c2b47a8ade142281"
+  },
+  "static/rollouts/rollout-02.webp": {
+    "sha256": "7d695d50e73d78cc6a9974f2d69ec30c9b1074c523b88f248d369d696e98ce3f"
+  },
+  "static/rollouts/rollout-03.webp": {
+    "sha256": "12a57df3f83c948b59a660e6ed274fcf4ff1edb57f5441491155653aa7103d9d"
+  },
+  "static/rollouts/rollout-04.webp": {
+    "sha256": "f91c7af401580b348444814782b88ef643ad9eaa11eb39f024fdee78a6a9cd7a"
+  },
+  "static/rollouts/rollout-05.webp": {
+    "sha256": "749b7c8cc6c8c0150fade0cf17ff31fb272721695eeaaac28921e53405bf42a3"
+  },
+  "static/rollouts/rollout-06.webp": {
+    "sha256": "d3ce05b8148600a22a8fb014b869d05691171acee413b3f38a04a4ac9634ec74"
+  },
+  "static/rollouts/rollout-07.webp": {
+    "sha256": "2cd97824268c1f3f83c31edead0944246496cc5022e493b8bc70f5066dd63496"
+  },
+  "static/rollouts/rollout-08.webp": {
+    "sha256": "802008d6faaeccf15f39313f283e8a4b8d05c81a2cb66b72392a15770d8d410f"
+  },
+  "static/rollouts/rollout-09.webp": {
+    "sha256": "49239cbba949a718525653390493fad63c886022b7c9afec7fac8eac29ed6c8c"
+  },
+  "static/rollouts/rollout-10.webp": {
+    "sha256": "1d5049ce5fe806c3cc8a696c3d1eaacaf5b7b3b571fb8f38c65d78b7165d6f35"
+  },
+  "static/rollouts/rollout-11.webp": {
+    "sha256": "406e507dd6473a49369d6231fe1f5e12bc2aad7db2f2a64556e11a3c98750fe2"
+  },
+  "static/rollouts/rollout-12.webp": {
+    "sha256": "2cca3206341f6413eceb2b89f78ecbf22054354c89676d200afc935b848cc453"
+  },
+  "static/rollouts/rollout-13.webp": {
+    "sha256": "87784a1367bce23544dcd11c218fe96622e4a92c15d51a9ed00ceb4fd3e5fc58"
+  },
+  "static/rollouts/rollout-14.webp": {
+    "sha256": "67ce62ee81fd618d756c2c9814215ff66a78532823d20e13efd91e9f352d1aab"
+  },
+  "static/rollouts/rollout-15.webp": {
+    "sha256": "5a0853bfddb86c13f40fbdff1073f5c7a0b524ba79d502c26fa9cb9abcc29304"
+  },
+  "static/rollouts/rollout-16.webp": {
+    "sha256": "47d42362f18e5caacf5dcb422e5e6eecf4f75c67c0c6a36b74fbb48a3a8377c6"
+  },
+  "static/rollouts/rollout-17.webp": {
+    "sha256": "60915ab8afcb02e053d747d864520c2b2287dab803ad8d98257d5da548f842b6"
+  },
+  "static/rollouts/rollout-18.webp": {
+    "sha256": "e1cc68dceed5e3e0b89384f61f66dc876e39f01a4f65c9d1936cbffde6bb3d34"
+  },
+  "static/rollouts/rollout-19.webp": {
+    "sha256": "4ea2cd30c97d0a0347623b1b02226e11ed5507afbe1c89d6f136736b104d6eb4"
+  },
+  "static/rollouts/rollout-20.webp": {
+    "sha256": "f7bc9ec5bf39e6680c7b7f7945e5f4cdfafd4bf6b8c3f91be9c5ce6af172717c"
+  },
+  "static/observation/gt.webp": {
+    "sha256": "11f52d2dc3c4fce52d35528cab33ee1df20476693c815cc0acfc94b9fec264be"
+  },
+  "static/observation/six.webp": {
+    "sha256": "b2b5670c42f9fbb27e5a40061d51f1fbbcc5027feebaf688df5e8504fe56dd40"
+  },
+  "static/observation/three.webp": {
+    "sha256": "787fd77aaadac967d5bed01fd404736cecc535bdd53ccba38e9605ddad7ad5a2"
+  },
+  "static/logos/rice.svg": {
+    "sha256": "c6f98c6282f2cee8820e02738e76637dd249ed8f5ed70eff1024e3f8ab876e51",
+    "source_url": "https://www.rice.edu/sites/g/files/bxs2566/files/2019-08/Rice_University_Horizontal_Blue.svg"
+  },
+  "static/logos/cmu.svg": {
+    "sha256": "8f87c78510f81c805ced1cc04a0d972b9d455b1e88765652006c671ddbbf07bc",
+    "source_url": "https://www.cmu.edu/"
+  },
+  "static/rollouts/strips/ground-truth-01-00.webp": {
+    "sha256": "5de8212c65aef33294338635d386ba314d40746b378e7eb26c20606c3a4bfe53"
+  },
+  "static/rollouts/strips/ground-truth-01-01.webp": {
+    "sha256": "7e47398a45d2a8bddfc5ad4144de1c4cd02b129d7fedadc6d1f08e3a8ca6b7df"
+  },
+  "static/rollouts/strips/ground-truth-01-02.webp": {
+    "sha256": "070f5d524af66256ba152869750acd2bfc533016efefe747b035a06f4d40f248"
+  },
+  "static/rollouts/strips/ground-truth-01-03.webp": {
+    "sha256": "60d7f543ff67ef09408db3727be644858a71d062ef97f9c76b7b5d4c2ba3693a"
+  },
+  "static/rollouts/strips/ground-truth-01-04.webp": {
+    "sha256": "b94854e7f01a1591edbd82fb01d8d0e483345186eb424094497b98a5c3c83d4e"
+  },
+  "static/rollouts/strips/ground-truth-01-05.webp": {
+    "sha256": "7bf61a0ebb710fa000b9e4b958f12fe59fab923492b260081bc8e3265ab4d1b9"
+  },
+  "static/rollouts/strips/ground-truth-01-06.webp": {
+    "sha256": "ebe65316f0806e69b0db091a2b23f4f4335aef97325ee7a97121ba563733bf9f"
+  },
+  "static/rollouts/strips/ground-truth-01-07.webp": {
+    "sha256": "edc7c677b7e3cd99e9c37d3f30ae49e3be011fcfd24e5abab4a5c3bbc23cc383"
+  },
+  "static/rollouts/strips/ground-truth-01-08.webp": {
+    "sha256": "b648f8be21e451ea0c955e8e65d6e3eaf8e40631171d200ee1c5b8bf8bae316f"
+  },
+  "static/rollouts/strips/ground-truth-02-00.webp": {
+    "sha256": "5de8212c65aef33294338635d386ba314d40746b378e7eb26c20606c3a4bfe53"
+  },
+  "static/rollouts/strips/ground-truth-02-01.webp": {
+    "sha256": "e1d3f45fe478d607c3460ce8dceb8e281355492bb151d6a696e695d241e896c9"
+  },
+  "static/rollouts/strips/ground-truth-02-02.webp": {
+    "sha256": "580b4f5beebb415da05424e2b644cbce9c8d4df50a6eaee758a3223442e9bb33"
+  },
+  "static/rollouts/strips/ground-truth-02-03.webp": {
+    "sha256": "97beb31f6699b450aed16df48f6bcc231a8f3219e3d34e7cdebe83ee8b9639ef"
+  },
+  "static/rollouts/strips/ground-truth-02-04.webp": {
+    "sha256": "915b952c2bc40ffe15f3a7cf67df5316c4da121f90d839f00ec60a7f16e7838a"
+  },
+  "static/rollouts/strips/ground-truth-02-05.webp": {
+    "sha256": "16c4567b04bc832567a305fb4c071442fd31b2558ecb101b05f2ae9ad175663e"
+  },
+  "static/rollouts/strips/ground-truth-02-06.webp": {
+    "sha256": "d5a69b984a9f40df8bf059190486e5c5e7b63229f585b3bdde28fcf4236500af"
+  },
+  "static/rollouts/strips/ground-truth-02-07.webp": {
+    "sha256": "2fb548a3d957fb05bd34c2e9ab340cd97c40bf317446a8193bebe4c32566cda7"
+  },
+  "static/rollouts/strips/ground-truth-02-08.webp": {
+    "sha256": "728cbaf8406b1ca60999bc32c574d97b0adba9fc8ad9d3962e65e11e6f102011"
+  },
+  "static/rollouts/strips/ground-truth-03-00.webp": {
+    "sha256": "5de8212c65aef33294338635d386ba314d40746b378e7eb26c20606c3a4bfe53"
+  },
+  "static/rollouts/strips/ground-truth-03-01.webp": {
+    "sha256": "411a85532ccc1ad6089c4de6367bc9cf14876814ee13b8f1c808083e01c9ea09"
+  },
+  "static/rollouts/strips/ground-truth-03-02.webp": {
+    "sha256": "61c55305cbd89d2d5828c3ebc17ab55eabc8d1f04b18779e7a1fc2c3b6fa28be"
+  },
+  "static/rollouts/strips/ground-truth-03-03.webp": {
+    "sha256": "cbca04d621385bed85d3dfb932fe85abf637a8e0c038c5529043b3054ea046c0"
+  },
+  "static/rollouts/strips/ground-truth-03-04.webp": {
+    "sha256": "f95ec55a934c77015b3ee860266f7a56a4db33a9a315feca037ee5cddd05c098"
+  },
+  "static/rollouts/strips/ground-truth-03-05.webp": {
+    "sha256": "b5cba279c8d4a165d30e19964c99be1d00371b6d576ca7196140a92f436b7065"
+  },
+  "static/rollouts/strips/ground-truth-03-06.webp": {
+    "sha256": "4dd8ea6792f05308a78e761cba087520e7d93bf7e2cfe19334bb584e6723f214"
+  },
+  "static/rollouts/strips/ground-truth-03-07.webp": {
+    "sha256": "14d96253874e05c1b9a302eb02d1e075081b57e36947b06c7f38568bc9d33b9f"
+  },
+  "static/rollouts/strips/ground-truth-03-08.webp": {
+    "sha256": "7a494802a4def1a5755133b478fcb3132d802397ef23a661183e79ef9953f115"
+  },
+  "static/rollouts/strips/rollout-01-00.webp": {
+    "sha256": "1e47ba72b1962f6b998a956b9f31ac6728006b8e8744f6216290dfd326a44a19"
+  },
+  "static/rollouts/strips/rollout-01-01.webp": {
+    "sha256": "9423c4975687b622ab80bda0e34237bdf4f041ba907163bf17af67ac89c8397b"
+  },
+  "static/rollouts/strips/rollout-01-02.webp": {
+    "sha256": "f2d3a638f128ab4d0d2a7a977992482b6bd3b06b961c83464e7a29637685d169"
+  },
+  "static/rollouts/strips/rollout-01-03.webp": {
+    "sha256": "50bec10653a33b7004c8d6a3c26ee29719ef8dc809dae83a49588cfc7048cb9e"
+  },
+  "static/rollouts/strips/rollout-01-04.webp": {
+    "sha256": "441afec52ab8c7e28a30dafde1e6c769135fa10a782659ecaf606f7f3b8cf24a"
+  },
+  "static/rollouts/strips/rollout-01-05.webp": {
+    "sha256": "911aaaeb7c00e0095bda1c9dcf3c65d7be45c813a9d01f4b04279c6972c5e09d"
+  },
+  "static/rollouts/strips/rollout-01-06.webp": {
+    "sha256": "6f3ca29f5a9ab0f46d83edaba9d7bcfb27fd8b80277f00099be86720aa5e1415"
+  },
+  "static/rollouts/strips/rollout-01-07.webp": {
+    "sha256": "aabe4e831636ba20c344c0c2bd06a1353553fa88d68b4b0fc3705b064c3e9117"
+  },
+  "static/rollouts/strips/rollout-01-08.webp": {
+    "sha256": "8369263f9405b721edbd3bc1b7cda26f32476557be548c6d2b89638d15c5debe"
+  },
+  "static/rollouts/strips/rollout-02-00.webp": {
+    "sha256": "3d7f53dc60da30be4ef684387ffcf5e40d4ff1356de36ccfb634f5b23a34ed62"
+  },
+  "static/rollouts/strips/rollout-02-01.webp": {
+    "sha256": "af12478b0a89e3d43a08cdb0e2193ae1bebaed9767918627962e17b4bce537e3"
+  },
+  "static/rollouts/strips/rollout-02-02.webp": {
+    "sha256": "a54492f6c3a8d83f8975712a30221bcbba0ff3a7db0c8fc6de5a05f229059e4e"
+  },
+  "static/rollouts/strips/rollout-02-03.webp": {
+    "sha256": "6c6bb55e5c18dcf5ac79dbbd2aeb433f83b7ad2ac0e9b8f0e4fd5c658c4023ee"
+  },
+  "static/rollouts/strips/rollout-02-04.webp": {
+    "sha256": "a4722b561054b5b3c12bce290334aec6f70041ea2efa4b4dadf4e1e927043981"
+  },
+  "static/rollouts/strips/rollout-02-05.webp": {
+    "sha256": "9190e8b9753fbcbd8a6e22f77a834d56b6f5d19497d98f708e9ebdfeb616777c"
+  },
+  "static/rollouts/strips/rollout-02-06.webp": {
+    "sha256": "d76e03405d2d1ff7fb82dcbccb34a7f5e240e888f192eea54e5b49c28183bb84"
+  },
+  "static/rollouts/strips/rollout-02-07.webp": {
+    "sha256": "e7a73e370277fbc7d65328cc28cee3b6bbe6e716ee3b5ecbc43d4420a75c6d9b"
+  },
+  "static/rollouts/strips/rollout-02-08.webp": {
+    "sha256": "8e2c31be3ec4c3b07a1bc4e212dec1b86140201d9e1d4094bd21f0b1b7710c97"
+  },
+  "static/rollouts/strips/rollout-03-00.webp": {
+    "sha256": "2ed666672b4fef8a9285e04a151ecb0f3fb3968022092a8745f23c7cd9626d28"
+  },
+  "static/rollouts/strips/rollout-03-01.webp": {
+    "sha256": "ed27d663c3115c91245a7775f74ef026a1d87a18ca43563d9820204e2485164b"
+  },
+  "static/rollouts/strips/rollout-03-02.webp": {
+    "sha256": "2ac766f40d08134af50acbabadc2565492350b66d3404f50e483b46bd0f37476"
+  },
+  "static/rollouts/strips/rollout-03-03.webp": {
+    "sha256": "20d9a84feff874238850630f942d41d6e3f5e030e3cf5ebd7cd46a2e2d34e92d"
+  },
+  "static/rollouts/strips/rollout-03-04.webp": {
+    "sha256": "d3d32b3b58e76bd4696f5ef13b04f2547274b2b069504a3ae57cdb07b418399f"
+  },
+  "static/rollouts/strips/rollout-03-05.webp": {
+    "sha256": "30fc6c2c8a53e0289d87a6578a110f5de403d302e448a31db0ac37fad7163ce4"
+  },
+  "static/rollouts/strips/rollout-03-06.webp": {
+    "sha256": "a98202d928648a45375f035de35528e678565fd44b38ce258c07083ae7acc87e"
+  },
+  "static/rollouts/strips/rollout-03-07.webp": {
+    "sha256": "0b5c1bceef0df805278100d1b1b52f3224c7aa26ae33558b7e256f009a0862c7"
+  },
+  "static/rollouts/strips/rollout-03-08.webp": {
+    "sha256": "d72554c197a88e6925d1f29a441055ca408e9010f8e659161955742ec6cfe730"
+  },
+  "static/rollouts/strips/rollout-04-00.webp": {
+    "sha256": "832cccd3b8c0bb6431abcc20bb9833e10abddc62fe60ed11eeb2bca0dbd8f4f6"
+  },
+  "static/rollouts/strips/rollout-04-01.webp": {
+    "sha256": "ef8bea867d5d597a19e13d663da492657011967081e6a3bc7d9dc7f438eca15a"
+  },
+  "static/rollouts/strips/rollout-04-02.webp": {
+    "sha256": "2de83aafb1d22a208e48fde525dfde7d56d117664b266f6066d2d2cb54a67610"
+  },
+  "static/rollouts/strips/rollout-04-03.webp": {
+    "sha256": "e677bfcfd53293e145537eb21bae88560d3030275b1db4b5711acf56b8b3cc46"
+  },
+  "static/rollouts/strips/rollout-04-04.webp": {
+    "sha256": "5e61208e3ea6fcde07fabb20baeac4a4bd7375daf4571982fb1774da1c1dbf21"
+  },
+  "static/rollouts/strips/rollout-04-05.webp": {
+    "sha256": "485a4d62c8e89ecbf79bb310a303e63b4da747dde1f64bc1d4ed7da522450bd6"
+  },
+  "static/rollouts/strips/rollout-04-06.webp": {
+    "sha256": "d2d30f4c3e5efe1d7e9047667ef6ec453c6b808e7fb7bf6c585143a48827f1ac"
+  },
+  "static/rollouts/strips/rollout-04-07.webp": {
+    "sha256": "85b888ab79c799e07ddcfcfa3759fd4f630f896a26fbc82f6b92b10b175e9cca"
+  },
+  "static/rollouts/strips/rollout-04-08.webp": {
+    "sha256": "593da919fb8642a41bd77c8395584f5f7266fa9255ce4935ddf446a49c842479"
+  },
+  "static/rollouts/strips/rollout-05-00.webp": {
+    "sha256": "73a5ec1d04dfcaf326788b341f2119c95ee413bb4600345747096806bf7836fd"
+  },
+  "static/rollouts/strips/rollout-05-01.webp": {
+    "sha256": "63654770fe8c5bca3f5755b886d30283a236567218649ada381ae180959d8c91"
+  },
+  "static/rollouts/strips/rollout-05-02.webp": {
+    "sha256": "3789cdcec9ee443c66c8fd1272bf38a90640dede5f8da4ad22d60932133b05d9"
+  },
+  "static/rollouts/strips/rollout-05-03.webp": {
+    "sha256": "64e8c12d7c563553036961b693d16bc8b0811453d42f29756eb041e1f08b120e"
+  },
+  "static/rollouts/strips/rollout-05-04.webp": {
+    "sha256": "7bc774e81de427a78012ec6536a99fb44a90f6f50bcd6321fe8c36a730aefa93"
+  },
+  "static/rollouts/strips/rollout-05-05.webp": {
+    "sha256": "f92ee2b29e06a4b3ab70d1a5f21ec1d350689eb70986a4b7c3b0f89f3cc629d5"
+  },
+  "static/rollouts/strips/rollout-05-06.webp": {
+    "sha256": "6810da4c8e946987b7b122950e757828a96dd45f5bb2637b263f55bef408194b"
+  },
+  "static/rollouts/strips/rollout-05-07.webp": {
+    "sha256": "2c50623c602918c7ac45efe3715bfe2adba12ed0595e7f9c6b728f19636296df"
+  },
+  "static/rollouts/strips/rollout-05-08.webp": {
+    "sha256": "174e61554e789bf20eddd35690ad17480bc2453be4c55cdedd1688135e411eb2"
+  },
+  "static/rollouts/strips/rollout-06-00.webp": {
+    "sha256": "d83aa62d522d0de9066a0037941ac2c0e46102a38bd421464fcfb5675800e192"
+  },
+  "static/rollouts/strips/rollout-06-01.webp": {
+    "sha256": "f01c21d5fef23b44d868a51b683abbab901961e408002908da05bc41ac12c13c"
+  },
+  "static/rollouts/strips/rollout-06-02.webp": {
+    "sha256": "804258885b3579ca3150496e64067095ebee9e16bfe2f7e83db923252fca4a16"
+  },
+  "static/rollouts/strips/rollout-06-03.webp": {
+    "sha256": "ef76f335467987549776ec1c9f36e7cd5e63192fd422fe75bb2cb7f5fcb96ae1"
+  },
+  "static/rollouts/strips/rollout-06-04.webp": {
+    "sha256": "7fbe16eba2c06924be87c00b1747e6183481a3e7379440023cb1ac37c7cc27f1"
+  },
+  "static/rollouts/strips/rollout-06-05.webp": {
+    "sha256": "bac3807101a90697227e1e6ea05aa4a74d5a40c3ef20d47e5b37ffb2ab2a1c88"
+  },
+  "static/rollouts/strips/rollout-06-06.webp": {
+    "sha256": "1d9ef564d05f0dad3ceba65ad589ac5033809cf207856752a4266a0f8f2eacee"
+  },
+  "static/rollouts/strips/rollout-06-07.webp": {
+    "sha256": "b7b72999afd7caf32184613b1ef371dc3db64559eae2f4852897f0c7e9a4b63d"
+  },
+  "static/rollouts/strips/rollout-06-08.webp": {
+    "sha256": "b183dfa0c823b1a0e015b1ee5d150eeb399b0254ceda928857c09b9f706d77b8"
+  },
+  "static/rollouts/strips/rollout-07-00.webp": {
+    "sha256": "c10a0399758446b63ef80f722a2cd79d09779666fe2c2e2caef909079b17b0d2"
+  },
+  "static/rollouts/strips/rollout-07-01.webp": {
+    "sha256": "a34c889db33464f26bf91b1ad0f5205407f27b08ca2760c7b561b43486c08b02"
+  },
+  "static/rollouts/strips/rollout-07-02.webp": {
+    "sha256": "9c469fd734c62eadff375cf71af1b5985d2ec37e1a2a54f4dcb534512eb3cf45"
+  },
+  "static/rollouts/strips/rollout-07-03.webp": {
+    "sha256": "6a82d6231afadd0d6ef845f372a3d67138d4284dd095c1eb550b51ed2e69cf78"
+  },
+  "static/rollouts/strips/rollout-07-04.webp": {
+    "sha256": "dad969e7798e255dd493915ad76f9c59710ce14683ab3f5272b21636c97942f2"
+  },
+  "static/rollouts/strips/rollout-07-05.webp": {
+    "sha256": "9c55e3711a4ad36a461dc69e9fd939bf4b583acdd45e13b5f8b3df94c03c361c"
+  },
+  "static/rollouts/strips/rollout-07-06.webp": {
+    "sha256": "24ae7cd434a9146e86e4531c594288b8bdb91003d0078c4fce5b6f9b3620e9eb"
+  },
+  "static/rollouts/strips/rollout-07-07.webp": {
+    "sha256": "6227adccb82aaf4bc213d4e184b35280db9801e2e2ade84bba8a559db5b0a2a5"
+  },
+  "static/rollouts/strips/rollout-07-08.webp": {
+    "sha256": "16e97b4deecc0b7db80f808d8e2b441ad696bc08b781fe0802ec16965cbe82ef"
+  },
+  "static/rollouts/strips/rollout-08-00.webp": {
+    "sha256": "415bb223b77fe4350d5259d1f4cb92fe6bf60852d2811a4d334b0b47b5a3e4d3"
+  },
+  "static/rollouts/strips/rollout-08-01.webp": {
+    "sha256": "bf130ff948657cdbdd9e3a0cfc109b5600a1b2f38a5c4e54023b97d5ecca4128"
+  },
+  "static/rollouts/strips/rollout-08-02.webp": {
+    "sha256": "4569e8f13cc442051fa001366d1ca584a798fee96ed51f469eb96055eb28dfd7"
+  },
+  "static/rollouts/strips/rollout-08-03.webp": {
+    "sha256": "ca08d35665f796605e4315b5023232948e2193f837f3a6602fe4fd88f4c125a8"
+  },
+  "static/rollouts/strips/rollout-08-04.webp": {
+    "sha256": "37dbc75435b73e29a678414e3dc9bf248c3407fa5875c64b0ea5268aae5df730"
+  },
+  "static/rollouts/strips/rollout-08-05.webp": {
+    "sha256": "2177a8930a07b41d1487026e23debb187850a4b5fa992a3a4982049161043fb6"
+  },
+  "static/rollouts/strips/rollout-08-06.webp": {
+    "sha256": "23dbc4060a298ba98ca16dd206ae497afc388a5b5ea90f49345915c3fdd22b92"
+  },
+  "static/rollouts/strips/rollout-08-07.webp": {
+    "sha256": "867b970007d3719c4b6ae8e36a85aa3fa477f88104fe317b9acb340a0f591538"
+  },
+  "static/rollouts/strips/rollout-08-08.webp": {
+    "sha256": "6e99d221d6f85ef8453ea9eaca1a84319d0c509369f7449f3b926f1c4b70417b"
+  },
+  "static/rollouts/strips/rollout-09-00.webp": {
+    "sha256": "5220c4c26f3e6a9bb77d87ff602026c8ab1102ee2c26bb844ef71612f7c7afd0"
+  },
+  "static/rollouts/strips/rollout-09-01.webp": {
+    "sha256": "0f5229a2d8af0ca0608c8db799c24a22a9f1d818289c21bfcaef851ea7a53747"
+  },
+  "static/rollouts/strips/rollout-09-02.webp": {
+    "sha256": "7520347c175569b4c3cb70398d8b1b376185da805dbea603b710238f1ce8cf03"
+  },
+  "static/rollouts/strips/rollout-09-03.webp": {
+    "sha256": "970e54fc3030c392a8eef0a6dcce919f493cacef9db0996e094bc998e459db90"
+  },
+  "static/rollouts/strips/rollout-09-04.webp": {
+    "sha256": "f5727a2f5da1f4344ff6e0c139bf8e97130acd0f02f5cc5c50277f8071867ffa"
+  },
+  "static/rollouts/strips/rollout-09-05.webp": {
+    "sha256": "700939ce0799bf5fcc9262feb3bff89e0df28e89b193a947d28289c5affa201a"
+  },
+  "static/rollouts/strips/rollout-09-06.webp": {
+    "sha256": "4f4be6b28fb47d2c02996eace815cd4d7c7d0f14fc3e4f609a957cb5e29e1017"
+  },
+  "static/rollouts/strips/rollout-09-07.webp": {
+    "sha256": "a2d7f88900de6e1177ded4e58e79508b68ad60cdda7f8ff1748125b0a6736100"
+  },
+  "static/rollouts/strips/rollout-09-08.webp": {
+    "sha256": "f4fbc5b79aace41e24b8b0cc4b2056b94e29f37e2adfc88a189bcd3a2069741d"
+  },
+  "static/rollouts/strips/rollout-10-00.webp": {
+    "sha256": "3e4649f4f6b75bac8c4e51129b7d115569f10a2f457068d464ab3bc377211458"
+  },
+  "static/rollouts/strips/rollout-10-01.webp": {
+    "sha256": "022130735744d3668b810d1f192fbc0ad32a9b8751433af110b46de2d89eb893"
+  },
+  "static/rollouts/strips/rollout-10-02.webp": {
+    "sha256": "a5ae26ed157ad3b1fda73a36fbc607181966c8c867bdeaa17a1bdc8bb3e0cada"
+  },
+  "static/rollouts/strips/rollout-10-03.webp": {
+    "sha256": "80b798c21386cadbea2dc628a1988ce0d4fe74fe0052a35fad179ba841444358"
+  },
+  "static/rollouts/strips/rollout-10-04.webp": {
+    "sha256": "91975604149bf187d1c6e9711c81f384545b2d6f6def997ad4a286ee2768377c"
+  },
+  "static/rollouts/strips/rollout-10-05.webp": {
+    "sha256": "09fd19a5e818bf1582a8bd958eeec501f5a692bd94d4918862a5f47769e795f4"
+  },
+  "static/rollouts/strips/rollout-10-06.webp": {
+    "sha256": "2772d931657d6a025418067bd118aa81787074784cebd38bc92f1a504cc86ee5"
+  },
+  "static/rollouts/strips/rollout-10-07.webp": {
+    "sha256": "553074e17936a182fcd46961f7ddf93a13222366be11c4f2dd35696152c8ce3e"
+  },
+  "static/rollouts/strips/rollout-10-08.webp": {
+    "sha256": "c0d480fba839f439414795adaa8237538dd8ff8d74cf96ea163563a88e0f4fbb"
+  },
+  "static/rollouts/strips/rollout-11-00.webp": {
+    "sha256": "627095c30cfea6829f08211c5c15086e9c06aa3521f849a4b5a6798e8fbc23f3"
+  },
+  "static/rollouts/strips/rollout-11-01.webp": {
+    "sha256": "c30c8cd1f8465e859158aab8d6ac9cab1fda3ad27332327ff5d5a447322111d9"
+  },
+  "static/rollouts/strips/rollout-11-02.webp": {
+    "sha256": "4d86cc3d9b71759434c1caa1c8f12b59693154f1d191ffd2f3f3ad64ab333580"
+  },
+  "static/rollouts/strips/rollout-11-03.webp": {
+    "sha256": "49f9d2098a75c6f6abb6be223b3180e41136359f9a0e3aa851d094c1cd711f45"
+  },
+  "static/rollouts/strips/rollout-11-04.webp": {
+    "sha256": "ac8de77bef3ead031c4dc32dc945edd6051162d3a8bcf5c8ac88493e8ec93bef"
+  },
+  "static/rollouts/strips/rollout-11-05.webp": {
+    "sha256": "45fe9373a929329c6207fb26edc3314b48703317e449b1e175f630caf1106d6c"
+  },
+  "static/rollouts/strips/rollout-11-06.webp": {
+    "sha256": "c9350d06dca431d0d21e55ad580ed0b73e46a7bc5e9b929745031a4306a253d1"
+  },
+  "static/rollouts/strips/rollout-11-07.webp": {
+    "sha256": "69e6839454adcdaf7ee72d3b47d4f08b2256737cbc4b5aa074d1139a6e53acda"
+  },
+  "static/rollouts/strips/rollout-11-08.webp": {
+    "sha256": "158c65f9f8bec49a7ba12c65dafc2789b63ddcbabb1ecb8035ca46abdf148eb5"
+  },
+  "static/rollouts/strips/rollout-12-00.webp": {
+    "sha256": "0738ed0d3bf14f1174a07538379dd1d4be27d7d4df66c1f1d19ed8db50132c66"
+  },
+  "static/rollouts/strips/rollout-12-01.webp": {
+    "sha256": "c8a6c2da080c19a0a1464c6bc24e277624a7d30e3fdd571bf879d1a783f2889e"
+  },
+  "static/rollouts/strips/rollout-12-02.webp": {
+    "sha256": "17005dcff06dda2aff17d10d88445a9e16bffa25cf00dbed6590c6615b39164f"
+  },
+  "static/rollouts/strips/rollout-12-03.webp": {
+    "sha256": "0b165cdfce5251479e6dca6ad1bb7f15265abdba41c39f9fb9a3c035b50af648"
+  },
+  "static/rollouts/strips/rollout-12-04.webp": {
+    "sha256": "a51533725e1c28f444e31ab8ee923c71cccc38e10800699c2d93c43941bba2c3"
+  },
+  "static/rollouts/strips/rollout-12-05.webp": {
+    "sha256": "c8ad81fbbad4ab229a9369e6bcc3f3e929c25256974b29779eef9d0b9f1f5961"
+  },
+  "static/rollouts/strips/rollout-12-06.webp": {
+    "sha256": "2b34bd7ed942248f5b66ca3dbe6f120baba79b7941359b3fb314e1fa380b1569"
+  },
+  "static/rollouts/strips/rollout-12-07.webp": {
+    "sha256": "63a2281eb709cce86d8c6d2519b1f456fe0d1aff8e908b177f017e365f1d4d9a"
+  },
+  "static/rollouts/strips/rollout-12-08.webp": {
+    "sha256": "50dbc6af888077e45679d91fa1bf80b1e6c70203a2602e1bd45402e7d09ec792"
+  },
+  "static/rollouts/strips/rollout-13-00.webp": {
+    "sha256": "f9cf3afec0a2624fdf651753d8fe75ef0162ddaea2cdc4f2df8c0c67010fad79"
+  },
+  "static/rollouts/strips/rollout-13-01.webp": {
+    "sha256": "d397a1fb4aba3ac302b0ce4c8661676d9c2a63d9842d73294cdba433b9183e79"
+  },
+  "static/rollouts/strips/rollout-13-02.webp": {
+    "sha256": "a299fc98884afffea0ee113c6ef170c39e8aa9448927688d1635f7af8f35c3ac"
+  },
+  "static/rollouts/strips/rollout-13-03.webp": {
+    "sha256": "2b65bdd0e21ed2878d8ab807ff1712af17cae9aa75669934dfda7d00127518fb"
+  },
+  "static/rollouts/strips/rollout-13-04.webp": {
+    "sha256": "7a15389b406a61f30de5fe7b4c61c50991a3b25d242a8d47ceb2acadd3213502"
+  },
+  "static/rollouts/strips/rollout-13-05.webp": {
+    "sha256": "9ee08f02fb60ad7811653b4693ddec9c2511df19d4b66234346b58b7acfbc743"
+  },
+  "static/rollouts/strips/rollout-13-06.webp": {
+    "sha256": "1d1015a519ffcf22f11b112735a3089e9a28604275ca44c044a1e8fa11cea4f4"
+  },
+  "static/rollouts/strips/rollout-13-07.webp": {
+    "sha256": "e0d7278059b9582c9bd3454fa5a3eed5f8387ea49c4a5afc42d9ad8adf2a18af"
+  },
+  "static/rollouts/strips/rollout-13-08.webp": {
+    "sha256": "976a966d8fee9ba848c420cab59a4f890de90c8607c7b99a5694d82cf99f0da4"
+  },
+  "static/rollouts/strips/rollout-14-00.webp": {
+    "sha256": "7c1f9407092ee64c2fc112b29b4a70255b2b613166af20988bbe51df113044a6"
+  },
+  "static/rollouts/strips/rollout-14-01.webp": {
+    "sha256": "a7237d1a0725984de2e2272ef2872490b685f4eb60b9d4590ede11cc47fb7f1e"
+  },
+  "static/rollouts/strips/rollout-14-02.webp": {
+    "sha256": "5398b1ef11afa1074c44a89015db5a3941ef58de1bf82fed1f56f313d81a05a0"
+  },
+  "static/rollouts/strips/rollout-14-03.webp": {
+    "sha256": "09c9f10dcc416c14de401c918ce0e47caf79e840007df65efde6dfaf76bfb7c6"
+  },
+  "static/rollouts/strips/rollout-14-04.webp": {
+    "sha256": "3304fa524343020619efdab942094c3aa888a30ca2bc61d417bb5d7497577819"
+  },
+  "static/rollouts/strips/rollout-14-05.webp": {
+    "sha256": "8cdd3315bbb3c20c18b92b78198b7bce62ec5b98fecc2e91f5e6856795425e52"
+  },
+  "static/rollouts/strips/rollout-14-06.webp": {
+    "sha256": "64c2fc226c3a207631933cff444b246c4188d4633b0f574a627fe96f77542ca6"
+  },
+  "static/rollouts/strips/rollout-14-07.webp": {
+    "sha256": "84eae4b42926130e7f2dc1a669390e5f71410306d9a90ad9900f20d0014b0e95"
+  },
+  "static/rollouts/strips/rollout-14-08.webp": {
+    "sha256": "25182229f798d4cfd4898f8a9222dd365496dd5fc40f16590257f5b49ab06e26"
+  },
+  "static/rollouts/strips/rollout-15-00.webp": {
+    "sha256": "6b3bd6a5fdbebd4dcf2f395e2be05042f9d4621e32c8ccc57a868c698e8701d0"
+  },
+  "static/rollouts/strips/rollout-15-01.webp": {
+    "sha256": "e292ebd2c26c4882a94f96b9cb90ebd300f96691824c9264cce56a2454004793"
+  },
+  "static/rollouts/strips/rollout-15-02.webp": {
+    "sha256": "7531dd223152bb71eec624bef306d31def8a89d186f2284243789565fed32f2a"
+  },
+  "static/rollouts/strips/rollout-15-03.webp": {
+    "sha256": "cc932628953881088cd6a3aa513a95077a7d880e4032e01ee0493ba3c021e1a6"
+  },
+  "static/rollouts/strips/rollout-15-04.webp": {
+    "sha256": "536eccf25751e93554e33ce403785d4c12e1ee51627ec09b28684edfb8789f73"
+  },
+  "static/rollouts/strips/rollout-15-05.webp": {
+    "sha256": "b5c334e4c229721d0fd7e8254956757db071e50f5691984d4c1e738615ce9b14"
+  },
+  "static/rollouts/strips/rollout-15-06.webp": {
+    "sha256": "1d50b012fb56ee0a48671c0123635a24249078cac4b5e5f1febb5c6a96248600"
+  },
+  "static/rollouts/strips/rollout-15-07.webp": {
+    "sha256": "283aa84fd02eaff75e49b401135008fb3b64f678c405234935f54ed2d29485c0"
+  },
+  "static/rollouts/strips/rollout-15-08.webp": {
+    "sha256": "88340dbeeccac22ff25cde0423acdb9d11ed8b6c93b809c86dda61dc672ebde0"
+  },
+  "static/rollouts/strips/rollout-16-00.webp": {
+    "sha256": "1deb88f11705273d79f935bfe0688a1a5aba653b730e0783c3e56fb07e2d55fc"
+  },
+  "static/rollouts/strips/rollout-16-01.webp": {
+    "sha256": "3790b8a7fb8b39091b5142be1bd2af7452b5734e356e754e3c4fc2607503bbdc"
+  },
+  "static/rollouts/strips/rollout-16-02.webp": {
+    "sha256": "bc3b06c24c2e570e8d395d21d14891c7078a3ee3e7a978c72f513c1f20b1c479"
+  },
+  "static/rollouts/strips/rollout-16-03.webp": {
+    "sha256": "67212ea62819654b71c50868ce8b1aed4a4a012395f6dae9e91b925a3c51ca54"
+  },
+  "static/rollouts/strips/rollout-16-04.webp": {
+    "sha256": "21931c6e9a89fa8e40f501c1f6884de9ec3439c5db5b72fe52c89f598a268432"
+  },
+  "static/rollouts/strips/rollout-16-05.webp": {
+    "sha256": "81238c5a8bfd9daf41e3065fada925630e141f73d996364efa8930f32adc5a3d"
+  },
+  "static/rollouts/strips/rollout-16-06.webp": {
+    "sha256": "47977d15afa9ebcf9bae0e2da320bea594a54d8aa93a0824cef65d434272040a"
+  },
+  "static/rollouts/strips/rollout-16-07.webp": {
+    "sha256": "12d0b7e65317e0dd5d35118cb0670c9e5b27b5e0621e06d60ae1bee19754cfec"
+  },
+  "static/rollouts/strips/rollout-16-08.webp": {
+    "sha256": "24c42cfe585787baeef9a2af1c79b45bc75394a5da658045e5b36beaa89c3f5b"
+  },
+  "static/rollouts/strips/rollout-17-00.webp": {
+    "sha256": "8cebc02c54bbb749dbbb81d86e43e36e07d63126af4b2958dca6ce1bfa723704"
+  },
+  "static/rollouts/strips/rollout-17-01.webp": {
+    "sha256": "ccb7f935ce6595a13d7fb167a9412b0c5fd9868f772cc35a101e062ffe813a12"
+  },
+  "static/rollouts/strips/rollout-17-02.webp": {
+    "sha256": "3dec30b57da4b7abc7cf79899db4f53b359cb7d1f788dc0c6a168fa357d5d345"
+  },
+  "static/rollouts/strips/rollout-17-03.webp": {
+    "sha256": "3698e3fe68a06ac0c4215e999ea5b6fd7b2f0653f0984c23c91c860482cbe208"
+  },
+  "static/rollouts/strips/rollout-17-04.webp": {
+    "sha256": "7a9665cf8e2c6bbc844b32da29d54e6e26ffffec6c0d9e033bace34fc6c6c7ab"
+  },
+  "static/rollouts/strips/rollout-17-05.webp": {
+    "sha256": "ad8bc5c137e3317350700b87cc42d3613fb1d4235097eaa2cc7cec7bf34a511f"
+  },
+  "static/rollouts/strips/rollout-17-06.webp": {
+    "sha256": "9bc9ebf2ceca4e05d958a10adabc1a256dfd77dafad255022338342792dd30aa"
+  },
+  "static/rollouts/strips/rollout-17-07.webp": {
+    "sha256": "5442b787992548c976cf5c5323fafde48d90683c0c592cc0efb9aa2b25d7cdce"
+  },
+  "static/rollouts/strips/rollout-17-08.webp": {
+    "sha256": "6d205b6aca0599e04d395bac11a9e26dbf2f79569eba7bdc314b49cfdbd3d5fa"
+  },
+  "static/rollouts/strips/rollout-18-00.webp": {
+    "sha256": "f7c9b523e8b70f00b120445802a24c1f6e52ed1466c2ddc3123fb67f8a0a4241"
+  },
+  "static/rollouts/strips/rollout-18-01.webp": {
+    "sha256": "fef75b9dd61a38ceed5f304faf2966ae631a78e5d9dcbed39fc18b63bfceb4f7"
+  },
+  "static/rollouts/strips/rollout-18-02.webp": {
+    "sha256": "4d7123d1e5be5f45b2cb5d348bb7fb8b0263b31b4c38bd452864fbefe06a0f4d"
+  },
+  "static/rollouts/strips/rollout-18-03.webp": {
+    "sha256": "b6095357801142404087ca0bdd49d07ab32fc726bcf1d10691d7d1ff173bc3ca"
+  },
+  "static/rollouts/strips/rollout-18-04.webp": {
+    "sha256": "4a86edb4948d4dbaa98a4a5a30fa2ebb8e72aaa96d205291969845b058428942"
+  },
+  "static/rollouts/strips/rollout-18-05.webp": {
+    "sha256": "9abb21d6dfa04b785539b3b02ee3c3a8342fc3d790521a6e6aec1712d9d8e0fe"
+  },
+  "static/rollouts/strips/rollout-18-06.webp": {
+    "sha256": "073417fd4d1443e05205b6e421b9a79e19cfb25bed0fc2d1229534f4be1b43fe"
+  },
+  "static/rollouts/strips/rollout-18-07.webp": {
+    "sha256": "febc5142621a4aca9f71148cc0fb51e3f962f042972f9ad46b929b6218473809"
+  },
+  "static/rollouts/strips/rollout-18-08.webp": {
+    "sha256": "884ae8d9a892b1544af4a121a1ebb2be281c56b44ce9a168f3fbee7c15c44631"
+  },
+  "static/rollouts/strips/rollout-19-00.webp": {
+    "sha256": "9985f3d237d42351c6ca59288f6f99a4f6ad360c1cf7958aec1821959001e5ae"
+  },
+  "static/rollouts/strips/rollout-19-01.webp": {
+    "sha256": "6f54f9ed46eab5755a5a2f4d7126165266d42e0ae4fbd7bae26bda225cb5c7dc"
+  },
+  "static/rollouts/strips/rollout-19-02.webp": {
+    "sha256": "bdab22cf1ea736aaae62b53ef58659060f5f09ee3d961ee1235aa04aa594855a"
+  },
+  "static/rollouts/strips/rollout-19-03.webp": {
+    "sha256": "d1f7e9917f4cd1fa57bf82cd5bd8b6033dbff7fd1f6e9bb07606440887ef2ecd"
+  },
+  "static/rollouts/strips/rollout-19-04.webp": {
+    "sha256": "fd57df65fc3e73934face91a4ed34d7db583326c2917b85f7850a406f2376ed6"
+  },
+  "static/rollouts/strips/rollout-19-05.webp": {
+    "sha256": "f5249c02bd423d92e4336932c00920eddb4f900980a0d40d691958361df389e3"
+  },
+  "static/rollouts/strips/rollout-19-06.webp": {
+    "sha256": "2381d610c32953d37b768ec7739ed4f86be26d0fe23d30553b20a814c7ef4d8e"
+  },
+  "static/rollouts/strips/rollout-19-07.webp": {
+    "sha256": "1b45254ba8bd0257575d2568df057bd6479e061b00af50a20fff8b5675a28409"
+  },
+  "static/rollouts/strips/rollout-19-08.webp": {
+    "sha256": "ca317d87540914d98c2e836f1c20ee7ce71c2810295bc0ee138c8f3c233d7e27"
+  },
+  "static/rollouts/strips/rollout-20-00.webp": {
+    "sha256": "48030c60f9b66a974797dc290a1b53c9f54dd54142750333014d35ff98f524e1"
+  },
+  "static/rollouts/strips/rollout-20-01.webp": {
+    "sha256": "f9ed638c00723d576f486f45c40f37ad54b2c52c6aa2ac9f77c8062a235dc11d"
+  },
+  "static/rollouts/strips/rollout-20-02.webp": {
+    "sha256": "5f81bb5abc358748ee773443d67e4a3799f975563a2e6e863b07acca23d40a80"
+  },
+  "static/rollouts/strips/rollout-20-03.webp": {
+    "sha256": "b40f00dfdac3cf480d8ec4855f3626a97f98f7cb76ef5cfca3b6e89aaab9b4b1"
+  },
+  "static/rollouts/strips/rollout-20-04.webp": {
+    "sha256": "fd2ef2b10d4246e7ed8bc6407a376636a2b0cfd5e6f9c8eff48c2c55cb34c6c5"
+  },
+  "static/rollouts/strips/rollout-20-05.webp": {
+    "sha256": "485698b4c2d2e5929414da3620a97676ab85c41fe13d3c1fc59aa9790e052a40"
+  },
+  "static/rollouts/strips/rollout-20-06.webp": {
+    "sha256": "a64520b340598b7c3303d741a009a4cbd7e289fa298c5651797a8935f11023aa"
+  },
+  "static/rollouts/strips/rollout-20-07.webp": {
+    "sha256": "4430788cab6aa514389cf3cf3641b1ac5b74cc8ca9ba9739a61f27f21d690d1d"
+  },
+  "static/rollouts/strips/rollout-20-08.webp": {
+    "sha256": "898a49fd747a7caa3d6bd195580154f3152fb8f43f2443db6d83bd5548c7a392"
+  },
+  "static/logos/rice-shield.svg": {
+    "sha256": "2510584d98026d551303230c685213dba04b6167c11fcbce54321eabcc617d04",
+    "source": "Original shield paths extracted from https://www.rice.edu/sites/g/files/bxs2566/files/2019-08/Rice_University_Horizontal_Blue.svg; adjacent wordmark omitted."
+  },
+  "static/logos/cmu-square.png": {
+    "sha256": "a1bd92c983e0218aa52b0fcf1d2b0a0a0220478d07f1a61f59ea819fbadaa567",
+    "source": "User-provided CMU logo image, copied unchanged."
+  },
+  "static/figures/symbolic-guidance-paper.svg": {
+    "sha256": "ceb83e72a4395eb4f7c00903fb890ddeecf560a20fb2bbb97b4ab99f38885317",
+    "source": "Original manuscript figure joint_state_video_guidance.svg; copied unchanged."
+  },
+  "static/figures/symbolic-guidance-workflow.svg": {
+    "sha256": "cc66b758126e061370ded35613843c840ef42188758138f19ba11b1a8bf51533",
+    "source": "Panel (a) extracted from symbolic-guidance-paper.svg",
+    "source_sha256": "ceb83e72a4395eb4f7c00903fb890ddeecf560a20fb2bbb97b4ab99f38885317",
+    "adaptation": "Original axes_1 vector artwork retained unchanged; panel (b) and its title omitted; viewBox restricted to the workflow."
+  },
+  "observation-curves.csv": {
+    "sha256": "009fc22958cf400abc96d24f6a72742f53c7a5b7a6ce52b7cb8a230ba4c4e70c"
+  },
+  "static/js/observation-curves-data.js": {
+    "sha256": "24e04d8afb9044f984c983386edb89852e2fe807071b5621496708f9e4b18732"
+  },
+  "static/js/training-rollouts-data.js": {
+    "sha256": "01b9df63283ac45f08be58e0dc478a60218ce53aa32812962db18d1f13051ca9",
+    "bytes": 30613
+  },
+  "static/data/training-rollouts.json": {
+    "sha256": "db280ca5d4c68b09a3fa9e55d1deedbdb69a39f1ac7505a6d334889b3d781dbd",
+    "bytes": 51937
+  },
+  "static/js/scaling-fit-data.js": {
+    "sha256": "2e9aa4b431b4a5448e85c25e5e37b20159b7347bc4253321f5599bdc3cdfda0f",
+    "bytes": 19798
+  }
+}

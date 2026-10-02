@@ -1,0 +1,19 @@
+Website template and adaptations
+
+This website adapts Academic Project Page Template by Eliahu Horwitz:
+https://github.com/eliahuhorwitz/Academic-project-page-template
+The original template incorporates work from Nerfies:
+https://nerfies.github.io/
+
+The template and this site's template adaptations are licensed under Creative
+Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+License terms: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Changes include paper-specific layout and content, locally hosted Newsreader,
+interactive rollout comparison, and accessible resource and citation controls.
+
+Third-party components retain their own licenses: Bulma (MIT) and Newsreader
+(SIL Open Font License; see dist/static/fonts/OFL.txt).
+
+This notice does not assign a new license to the paper, research data, or
+scientific media. Refer to their original sources and applicable permissions.

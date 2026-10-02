@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/eliahuhorwitz/Academic-project-page-template",
+  "commit": "d38af1ccae1ce82c3404d2820c4c646afd409f81",
+  "license": "CC-BY-SA-4.0",
+  "retained": "Bulma stylesheet, centered publication header, hero/section/container layout, teaser and resource footer pattern",
+  "adaptations": "Paper-specific content, self-hosted Newsreader, accessible state comparison and charts; removed unrelated placeholder widgets."
+}

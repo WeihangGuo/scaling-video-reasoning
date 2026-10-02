@@ -1,0 +1,182 @@
+{
+  "source_sha256": {
+    "curves": "fb0238edf876ede2a3f7ed73948d485091ce4a93a0a4a761baf10f722a254992",
+    "frontier": "f4a12f0410f74e1378e0a1413f4b5d80912243b1a999bfef1cda0e39ebdca733",
+    "checkpoints": "12b8da68055c2f5aa83f55336d2fa8afbb80f513f55cbf9b7dcc0afc3b358830",
+    "analysis": "14c8d5249f4269ac641ff44c0e75a77df62ae8ba04df6af2eaf160b85f1de343"
+  },
+  "fits": [
+    {
+      "family": "ar",
+      "metric": "mean_frame",
+      "segment": "Middle third",
+      "points": 16,
+      "min_pf_days": 0.18781639111111112,
+      "max_pf_days": 1.327896649728,
+      "min_accuracy": 0.5255555555555556,
+      "max_accuracy": 0.671111111111111,
+      "log_A": -1.090763141802362,
+      "A": 0.33596001072463244,
+      "alpha": 0.2177847678172861,
+      "target_98_log10_pf_days": 5.626002236371953,
+      "target_98_pf_days": 422670.79077649064,
+      "target_98_scientific": "4.227e+5",
+      "fitted_accuracy_min": 0.5164322053071073,
+      "fit_rmse_percentage_points": 0.8334295946977874
+    },
+    {
+      "family": "ar",
+      "metric": "mean_frame",
+      "segment": "Last third",
+      "points": 16,
+      "min_pf_days": 1.47544072192,
+      "max_pf_days": 3.1391642036906666,
+      "min_accuracy": 0.6755555555555555,
+      "max_accuracy": 0.8366666666666663,
+      "log_A": -0.5784989665006282,
+      "A": 0.5607394238395164,
+      "alpha": 1.055160435103563,
+      "target_98_log10_pf_days": 1.3720483134453083,
+      "target_98_pf_days": 23.553112878554362,
+      "target_98_scientific": "2.355e+1",
+      "fitted_accuracy_min": 0.6280183408116888,
+      "fit_rmse_percentage_points": 2.1867257638182416
+    },
+    {
+      "family": "ar",
+      "metric": "full_trajectory",
+      "segment": "Middle third",
+      "points": 6,
+      "min_pf_days": 0.979453251584,
+      "max_pf_days": 2.4147416951466667,
+      "min_accuracy": 0.06,
+      "max_accuracy": 0.2,
+      "log_A": -0.05123022799382434,
+      "A": 0.9500599149633303,
+      "alpha": 0.11846387732397391,
+      "target_98_log10_pf_days": 14.1538588545956,
+      "target_98_pf_days": 142514434740774.7,
+      "target_98_scientific": "1.425e+14",
+      "fitted_accuracy_min": 0.047600630838130376,
+      "fit_rmse_percentage_points": 2.9600563563160254
+    },
+    {
+      "family": "ar",
+      "metric": "full_trajectory",
+      "segment": "Last third",
+      "points": 6,
+      "min_pf_days": 2.4952330849848887,
+      "max_pf_days": 3.1391642036906666,
+      "min_accuracy": 0.21,
+      "max_accuracy": 0.36,
+      "log_A": 0.46353318208278027,
+      "A": 1.589680705766184,
+      "alpha": 0.7931190352919679,
+      "target_98_log10_pf_days": 2.3959580125246673,
+      "target_98_pf_days": 248.86167078481856,
+      "target_98_scientific": "2.489e+2",
+      "fitted_accuracy_min": 0.2302432346422667,
+      "fit_rmse_percentage_points": 1.7639157751065841
+    },
+    {
+      "family": "bidir",
+      "metric": "mean_frame",
+      "segment": "Middle third",
+      "points": 14,
+      "min_pf_days": 0.0914053688888889,
+      "max_pf_days": 0.25748938752,
+      "log_A": -0.8288265270481141,
+      "A": 0.4365612787105803,
+      "alpha": 0.1822627470730756,
+      "target_98_log10_pf_days": 7.346620407554417
+    },
+    {
+      "family": "bidir",
+      "metric": "mean_frame",
+      "segment": "Last third",
+      "points": 14,
+      "min_pf_days": 0.2717943534933333,
+      "max_pf_days": 1.5797793792,
+      "log_A": -0.8154482642457695,
+      "A": 0.442440952442637,
+      "alpha": 0.0937859102699844,
+      "target_98_log10_pf_days": 14.339310873297556
+    }
+  ],
+  "observed_ranges": [
+    {
+      "family": "ar",
+      "metric": "mean_frame",
+      "min_pf_days": 0.00044082739019775976,
+      "max_pf_days": 3.139164203690666
+    },
+    {
+      "family": "ar",
+      "metric": "full_trajectory",
+      "min_pf_days": 0.00044082739019775976,
+      "max_pf_days": 3.139164203690666
+    },
+    {
+      "family": "bidir",
+      "metric": "mean_frame",
+      "min_pf_days": 0.0005871234833885864,
+      "max_pf_days": 2.5025011438933333
+    }
+  ],
+  "crossings": [
+    {
+      "family": "ar",
+      "metric": "mean_frame",
+      "segment": "Middle third",
+      "training_pf_days": 422670.79077649,
+      "accuracy": 0.98
+    },
+    {
+      "family": "ar",
+      "metric": "mean_frame",
+      "segment": "Last third",
+      "training_pf_days": 23.553112878554355,
+      "accuracy": 0.98
+    },
+    {
+      "family": "ar",
+      "metric": "full_trajectory",
+      "segment": "Middle third",
+      "training_pf_days": 142514434740774.53,
+      "accuracy": 0.98
+    },
+    {
+      "family": "ar",
+      "metric": "full_trajectory",
+      "segment": "Last third",
+      "training_pf_days": 248.86167078481844,
+      "accuracy": 0.98
+    },
+    {
+      "family": "bidir",
+      "metric": "mean_frame",
+      "segment": "Middle third",
+      "training_pf_days": 22213674.69193445,
+      "accuracy": 0.98
+    },
+    {
+      "family": "bidir",
+      "metric": "mean_frame",
+      "segment": "Last third",
+      "training_pf_days": 218429289592333.88,
+      "accuracy": 0.98
+    }
+  ],
+  "fit_parameters_unchanged": true,
+  "frontier_assignments_unchanged": true,
+  "curves_verified_against_coefficients": true,
+  "font": "Newsreader; embedded glyph outlines",
+  "font_sha256": "943a12f0da8d6bcc3862dfa266ba3e80301097974e3e40398d81f77414326f75",
+  "layout": {
+    "width": 720,
+    "height": 1050,
+    "panels": 3,
+    "rows": 3
+  },
+  "omitted_panel": "Bidir full-trajectory accuracy is zero at every evaluated checkpoint."
+}

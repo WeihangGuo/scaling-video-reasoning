@@ -1,0 +1,1805 @@
+{
+  "model": "270M",
+  "parameters": 271760656,
+  "frame_count": 81,
+  "fps": 24,
+  "episode_selection": "First episode in the saved evaluation order; fixed across all checkpoints.",
+  "checkpoint_selection": "Fifteen existing checkpoint exposures spanning the saved training progression.",
+  "fixed_inputs": "The same simulator episode, initial observation, action sequence, and sampling-noise seed.",
+  "image_processing": "Unmodified saved RGB pixels, losslessly encoded as nine-frame strips.",
+  "reference": "One shared ground-truth VAE reconstruction of the same simulator episode.",
+  "training_step_definition": "Completed optimizer updates, read from the loaded checkpoint metadata.",
+  "earliest_available_step": 2048,
+  "latest_available_step": 500000,
+  "limitations": "No saved step-0 or step-100 full rollout is available in this checkpoint progression.",
+  "validation": "All 135 action-boundary scores reproduced from RGB; all encoded pixels verified lossless.",
+  "source_digests": [
+    {
+      "id": "checkpoint-01",
+      "decoded_rgb_sha256": "0df07ad112b4db7540d4e6111bc6b8878ea52c4022470ccc6af624fed27ecc87",
+      "record_sha256": "2a9d7798edbacbc70a3a4f1bb3afe6db7a80ef460169669c5806455bc76324a4"
+    },
+    {
+      "id": "checkpoint-02",
+      "decoded_rgb_sha256": "c38894d5108a69645de470773fe2c9cfda084c2001f68fd727970677d1437623",
+      "record_sha256": "e7f641dad4b5d8d3ede7c6f635b40258f4a7f264ed97b35907732718fe4545a8"
+    },
+    {
+      "id": "checkpoint-03",
+      "decoded_rgb_sha256": "0c435b4152afa38e3130dc609b55aa50aca1c0a5ee88ee5fb24a2c1fa61c332c",
+      "record_sha256": "27989c418363f54e30ea3b78ddf17b091360c1b3466ba7f7af1244b23df0d2e5"
+    },
+    {
+      "id": "checkpoint-04",
+      "decoded_rgb_sha256": "2316a3e5825412a9a24e23ad0fbd3fe9224787ddf81658c792152e9c153c1073",
+      "record_sha256": "36ba36657a2645e903fc2c1ff6a4286a0943f39055fabad57b168c980a4373ce"
+    },
+    {
+      "id": "checkpoint-05",
+      "decoded_rgb_sha256": "10f7da6311921f93190e5e71f25940de420626f2fcf72a9f90c9a4ad3eba5750",
+      "record_sha256": "b47a8d50e0e01755b655d344bf9209d9a467d80e6d7d062eeee8d0d5ec60cf64"
+    },
+    {
+      "id": "checkpoint-06",
+      "decoded_rgb_sha256": "3a5039355396f725045a361d7136b202c94f0498a86b1404a7525255c644817f",
+      "record_sha256": "b1d6369e8a7ae6f2528e5aee951a286049b73448d8c901e4401802dcf9e1e92d"
+    },
+    {
+      "id": "checkpoint-07",
+      "decoded_rgb_sha256": "d5f24f630de00679c47979082b4f8e3b8ac9f36e3f1df055f1a848f9a4cbc32e",
+      "record_sha256": "c315348bb73ad0db5d582362ad930cb0e8072a2baf061e83931846cc64a3e001"
+    },
+    {
+      "id": "checkpoint-08",
+      "decoded_rgb_sha256": "a6a40cfcc1b7256939307328beacb111bc21df8d96e8c43d24864165a0469cd7",
+      "record_sha256": "539256d3554fc180448ceb678bebdf0e6e9ea4cdf8c195da87573f2508c95cda"
+    },
+    {
+      "id": "checkpoint-09",
+      "decoded_rgb_sha256": "3f5b3103232dea3586735097cdb2a25fa0ff0f404da256b73eaca317887d8de4",
+      "record_sha256": "82affb9c311364d6e9d9cf8c9f10ea4bc3ca79e35116c53d316be38e8888a1d6"
+    },
+    {
+      "id": "checkpoint-10",
+      "decoded_rgb_sha256": "7964d5f1dbecaa306fde626f5dabd6b36ce9eee37ea23e0a747ba90c4f1719ed",
+      "record_sha256": "89dfe2927d1b405dbb4d46b53cda2d602de381bcfa5e45ca1360d45d8aede1a5"
+    },
+    {
+      "id": "checkpoint-11",
+      "decoded_rgb_sha256": "ba60610f5bb066ac3b8abbf1187652a3057476d0f048e7394d2d9ce57efcdddf",
+      "record_sha256": "996d148bfe57130a14c868ecaf7641844f18e8d6947f2d75a4ce60716b6a1d4b"
+    },
+    {
+      "id": "checkpoint-12",
+      "decoded_rgb_sha256": "9666688c1766224dbda92a0b783ea2cbfca687dffa9427ab5892cccc8d95ba56",
+      "record_sha256": "73a26cfea2d105c758369b3f63af171937896971afecf553630965da07e8765c"
+    },
+    {
+      "id": "checkpoint-13",
+      "decoded_rgb_sha256": "39b3ee4dfe727e536dc0d9574a362d9e6cf55be685046ae5d33b13d15e63250d",
+      "record_sha256": "36585677b009536f3a682a4443458d8273cdd0380d040c36003ee785e7f39834"
+    },
+    {
+      "id": "checkpoint-14",
+      "decoded_rgb_sha256": "19844e0ac390667c86c9fe9eb95d1f8c9024d566aa25d04537d2b68e45e5dd10",
+      "record_sha256": "99ef584dd113a71a336e12f087e430e8db3e65ea13e7c312e122d3b8fdeead46"
+    },
+    {
+      "id": "checkpoint-15",
+      "decoded_rgb_sha256": "0eb72dc7070070855e43561da90c14e70957bb91c0fdcb110ef9980f68317110",
+      "record_sha256": "258b3b9ae8d026fc6b68284b331bcd91ab2267fa751401eeeb697d1404a043dd"
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "checkpoint-01",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 2048,
+      "training_videos": 32768,
+      "training_pf_days": 0.00422299001946112,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-01-00.webp",
+        "static/training-rollouts/checkpoint-01-01.webp",
+        "static/training-rollouts/checkpoint-01-02.webp",
+        "static/training-rollouts/checkpoint-01-03.webp",
+        "static/training-rollouts/checkpoint-01-04.webp",
+        "static/training-rollouts/checkpoint-01-05.webp",
+        "static/training-rollouts/checkpoint-01-06.webp",
+        "static/training-rollouts/checkpoint-01-07.webp",
+        "static/training-rollouts/checkpoint-01-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-02",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 4096,
+      "training_videos": 65536,
+      "training_pf_days": 0.00844598003892224,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-02-00.webp",
+        "static/training-rollouts/checkpoint-02-01.webp",
+        "static/training-rollouts/checkpoint-02-02.webp",
+        "static/training-rollouts/checkpoint-02-03.webp",
+        "static/training-rollouts/checkpoint-02-04.webp",
+        "static/training-rollouts/checkpoint-02-05.webp",
+        "static/training-rollouts/checkpoint-02-06.webp",
+        "static/training-rollouts/checkpoint-02-07.webp",
+        "static/training-rollouts/checkpoint-02-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-03",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 8192,
+      "training_videos": 131072,
+      "training_pf_days": 0.01689196007784448,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 4,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 4,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 5,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-03-00.webp",
+        "static/training-rollouts/checkpoint-03-01.webp",
+        "static/training-rollouts/checkpoint-03-02.webp",
+        "static/training-rollouts/checkpoint-03-03.webp",
+        "static/training-rollouts/checkpoint-03-04.webp",
+        "static/training-rollouts/checkpoint-03-05.webp",
+        "static/training-rollouts/checkpoint-03-06.webp",
+        "static/training-rollouts/checkpoint-03-07.webp",
+        "static/training-rollouts/checkpoint-03-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-04",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 16384,
+      "training_videos": 262144,
+      "training_pf_days": 0.03378392015568896,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 5,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 7,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 5,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 0,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 0,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-04-00.webp",
+        "static/training-rollouts/checkpoint-04-01.webp",
+        "static/training-rollouts/checkpoint-04-02.webp",
+        "static/training-rollouts/checkpoint-04-03.webp",
+        "static/training-rollouts/checkpoint-04-04.webp",
+        "static/training-rollouts/checkpoint-04-05.webp",
+        "static/training-rollouts/checkpoint-04-06.webp",
+        "static/training-rollouts/checkpoint-04-07.webp",
+        "static/training-rollouts/checkpoint-04-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-05",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 32768,
+      "training_videos": 524288,
+      "training_pf_days": 0.06756784031137791,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 5,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 6,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 4,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-05-00.webp",
+        "static/training-rollouts/checkpoint-05-01.webp",
+        "static/training-rollouts/checkpoint-05-02.webp",
+        "static/training-rollouts/checkpoint-05-03.webp",
+        "static/training-rollouts/checkpoint-05-04.webp",
+        "static/training-rollouts/checkpoint-05-05.webp",
+        "static/training-rollouts/checkpoint-05-06.webp",
+        "static/training-rollouts/checkpoint-05-07.webp",
+        "static/training-rollouts/checkpoint-05-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-06",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 49152,
+      "training_videos": 786432,
+      "training_pf_days": 0.10135176046706688,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 5,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 6,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 5,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 4,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 6,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-06-00.webp",
+        "static/training-rollouts/checkpoint-06-01.webp",
+        "static/training-rollouts/checkpoint-06-02.webp",
+        "static/training-rollouts/checkpoint-06-03.webp",
+        "static/training-rollouts/checkpoint-06-04.webp",
+        "static/training-rollouts/checkpoint-06-05.webp",
+        "static/training-rollouts/checkpoint-06-06.webp",
+        "static/training-rollouts/checkpoint-06-07.webp",
+        "static/training-rollouts/checkpoint-06-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-07",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 62500,
+      "training_videos": 1000000,
+      "training_pf_days": 0.12887542784,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 5,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 4,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 4,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 5,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 0,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 2,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-07-00.webp",
+        "static/training-rollouts/checkpoint-07-01.webp",
+        "static/training-rollouts/checkpoint-07-02.webp",
+        "static/training-rollouts/checkpoint-07-03.webp",
+        "static/training-rollouts/checkpoint-07-04.webp",
+        "static/training-rollouts/checkpoint-07-05.webp",
+        "static/training-rollouts/checkpoint-07-06.webp",
+        "static/training-rollouts/checkpoint-07-07.webp",
+        "static/training-rollouts/checkpoint-07-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-08",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 93750,
+      "training_videos": 1500000,
+      "training_pf_days": 0.19331314176,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 5,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 3,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 1,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 0,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 0,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 0,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 0,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-08-00.webp",
+        "static/training-rollouts/checkpoint-08-01.webp",
+        "static/training-rollouts/checkpoint-08-02.webp",
+        "static/training-rollouts/checkpoint-08-03.webp",
+        "static/training-rollouts/checkpoint-08-04.webp",
+        "static/training-rollouts/checkpoint-08-05.webp",
+        "static/training-rollouts/checkpoint-08-06.webp",
+        "static/training-rollouts/checkpoint-08-07.webp",
+        "static/training-rollouts/checkpoint-08-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-09",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 125000,
+      "training_videos": 2000000,
+      "training_pf_days": 0.25775085568,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 11,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 10,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 7,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 8,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 6,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-09-00.webp",
+        "static/training-rollouts/checkpoint-09-01.webp",
+        "static/training-rollouts/checkpoint-09-02.webp",
+        "static/training-rollouts/checkpoint-09-03.webp",
+        "static/training-rollouts/checkpoint-09-04.webp",
+        "static/training-rollouts/checkpoint-09-05.webp",
+        "static/training-rollouts/checkpoint-09-06.webp",
+        "static/training-rollouts/checkpoint-09-07.webp",
+        "static/training-rollouts/checkpoint-09-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-10",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 156250,
+      "training_videos": 2500000,
+      "training_pf_days": 0.3221885696,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 10,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 7,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 7,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 5,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-10-00.webp",
+        "static/training-rollouts/checkpoint-10-01.webp",
+        "static/training-rollouts/checkpoint-10-02.webp",
+        "static/training-rollouts/checkpoint-10-03.webp",
+        "static/training-rollouts/checkpoint-10-04.webp",
+        "static/training-rollouts/checkpoint-10-05.webp",
+        "static/training-rollouts/checkpoint-10-06.webp",
+        "static/training-rollouts/checkpoint-10-07.webp",
+        "static/training-rollouts/checkpoint-10-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-11",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 212500,
+      "training_videos": 3400000,
+      "training_pf_days": 0.438176454656,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 10,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 8,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 8,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 6,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-11-00.webp",
+        "static/training-rollouts/checkpoint-11-01.webp",
+        "static/training-rollouts/checkpoint-11-02.webp",
+        "static/training-rollouts/checkpoint-11-03.webp",
+        "static/training-rollouts/checkpoint-11-04.webp",
+        "static/training-rollouts/checkpoint-11-05.webp",
+        "static/training-rollouts/checkpoint-11-06.webp",
+        "static/training-rollouts/checkpoint-11-07.webp",
+        "static/training-rollouts/checkpoint-11-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-12",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 275000,
+      "training_videos": 4400000,
+      "training_pf_days": 0.567051882496,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 10,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 8,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 9,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 7,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-12-00.webp",
+        "static/training-rollouts/checkpoint-12-01.webp",
+        "static/training-rollouts/checkpoint-12-02.webp",
+        "static/training-rollouts/checkpoint-12-03.webp",
+        "static/training-rollouts/checkpoint-12-04.webp",
+        "static/training-rollouts/checkpoint-12-05.webp",
+        "static/training-rollouts/checkpoint-12-06.webp",
+        "static/training-rollouts/checkpoint-12-07.webp",
+        "static/training-rollouts/checkpoint-12-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-13",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 337500,
+      "training_videos": 5400000,
+      "training_pf_days": 0.695927310336,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 10,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 8,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 9,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 7,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-13-00.webp",
+        "static/training-rollouts/checkpoint-13-01.webp",
+        "static/training-rollouts/checkpoint-13-02.webp",
+        "static/training-rollouts/checkpoint-13-03.webp",
+        "static/training-rollouts/checkpoint-13-04.webp",
+        "static/training-rollouts/checkpoint-13-05.webp",
+        "static/training-rollouts/checkpoint-13-06.webp",
+        "static/training-rollouts/checkpoint-13-07.webp",
+        "static/training-rollouts/checkpoint-13-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-14",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 400000,
+      "training_videos": 6400000,
+      "training_pf_days": 0.824802738176,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 10,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 8,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 9,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 7,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-14-00.webp",
+        "static/training-rollouts/checkpoint-14-01.webp",
+        "static/training-rollouts/checkpoint-14-02.webp",
+        "static/training-rollouts/checkpoint-14-03.webp",
+        "static/training-rollouts/checkpoint-14-04.webp",
+        "static/training-rollouts/checkpoint-14-05.webp",
+        "static/training-rollouts/checkpoint-14-06.webp",
+        "static/training-rollouts/checkpoint-14-07.webp",
+        "static/training-rollouts/checkpoint-14-08.webp"
+      ]
+    },
+    {
+      "id": "checkpoint-15",
+      "model": "270M",
+      "parameters": 271760656,
+      "step": 500000,
+      "training_videos": 8000000,
+      "training_pf_days": 1.03100342272,
+      "fps": 24,
+      "frames": 81,
+      "width": 256,
+      "height": 256,
+      "columns": 9,
+      "actions": [
+        "F2",
+        "L",
+        "D2",
+        "R",
+        "U2",
+        "D",
+        "F2",
+        "U2",
+        "B2"
+      ],
+      "boundaries": [
+        {
+          "frame": 16,
+          "action": "F2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 23,
+          "action": "L",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 30,
+          "action": "D2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 37,
+          "action": "R",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 44,
+          "action": "U2",
+          "correct_stickers": 12,
+          "total_stickers": 12,
+          "exact_frame": true
+        },
+        {
+          "frame": 51,
+          "action": "D",
+          "correct_stickers": 10,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 58,
+          "action": "F2",
+          "correct_stickers": 8,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 65,
+          "action": "U2",
+          "correct_stickers": 9,
+          "total_stickers": 12,
+          "exact_frame": false
+        },
+        {
+          "frame": 72,
+          "action": "B2",
+          "correct_stickers": 7,
+          "total_stickers": 12,
+          "exact_frame": false
+        }
+      ],
+      "gt_label": "Ground-truth reconstruction (VAE)",
+      "weights": "EMA",
+      "generation": "AR-k1",
+      "gt_strips": [
+        "static/training-rollouts/ground-truth-00.webp",
+        "static/training-rollouts/ground-truth-01.webp",
+        "static/training-rollouts/ground-truth-02.webp",
+        "static/training-rollouts/ground-truth-03.webp",
+        "static/training-rollouts/ground-truth-04.webp",
+        "static/training-rollouts/ground-truth-05.webp",
+        "static/training-rollouts/ground-truth-06.webp",
+        "static/training-rollouts/ground-truth-07.webp",
+        "static/training-rollouts/ground-truth-08.webp"
+      ],
+      "pred_strips": [
+        "static/training-rollouts/checkpoint-15-00.webp",
+        "static/training-rollouts/checkpoint-15-01.webp",
+        "static/training-rollouts/checkpoint-15-02.webp",
+        "static/training-rollouts/checkpoint-15-03.webp",
+        "static/training-rollouts/checkpoint-15-04.webp",
+        "static/training-rollouts/checkpoint-15-05.webp",
+        "static/training-rollouts/checkpoint-15-06.webp",
+        "static/training-rollouts/checkpoint-15-07.webp",
+        "static/training-rollouts/checkpoint-15-08.webp"
+      ]
+    }
+  ]
+}

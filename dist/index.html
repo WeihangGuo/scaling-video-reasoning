@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scaling Video Generation for Reasoning: At What Cost?</title>
+  <meta name="description" content="A controlled Rubik’s Cube study of hidden-state reasoning, video generation, and the computational cost of reliable predictions.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Weihang Guo, Xiaoyu Wu, Yifei Wang, Niloofar Mireshghallah, Lydia E. Kavraki">
+  <meta name="citation_title" content="Scaling Video Generation for Reasoning: At What Cost?">
+  <meta name="citation_author" content="Guo, Weihang">
+  <meta name="citation_author" content="Wu, Xiaoyu">
+  <meta name="citation_author" content="Wang, Yifei">
+  <meta name="citation_author" content="Mireshghallah, Niloofar">
+  <meta name="citation_author" content="Kavraki, Lydia E.">
+  <meta name="citation_publication_date" content="2026/09/29">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2609.36599">
+  <meta name="theme-color" content="#173e7a">
+  <meta property="og:title" content="Scaling Video Generation for Reasoning: At What Cost?">
+  <meta property="og:description" content="Experiments on video prediction, training compute, and symbolic guidance in a controlled Rubik’s Cube task.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23173e7a'/%3E%3Cpath d='M7 7h8v8H7zm10 0h8v8h-8zM7 17h8v8H7zm10 0h8v8h-8z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preload" href="static/fonts/Newsreader.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/explorers.css?v=guidance-compact-10">
+  <link rel="stylesheet" href="static/css/story.css?v=blog-8">
+  <link rel="stylesheet" href="static/css/blog.css?v=highlight-11">
+  <script defer src="static/js/rollout-gallery-data.js?v=rollout-strips-2"></script>
+  <script defer src="static/js/observation-data.js"></script>
+  <script defer src="static/js/observation-curves-data.js?v=observation-curves-7"></script>
+  <script defer src="static/js/results-data.js"></script>
+  <script defer src="static/js/training-rollouts-data.js?v=blog-8"></script>
+  <script defer src="static/js/scaling-fit-data.js?v=blog-8"></script>
+  <script defer src="static/js/scaling-playground.js?v=blog-8"></script>
+  <script defer src="static/js/index.js?v=latest-checkpoint-12"></script>
+  <script defer src="static/js/explorers.js?v=guidance-compact-10"></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<main id="main-content">
+  <!-- Publication header and Bulma layout adapted from Academic-project-page-template. -->
+  <section class="hero publication-header">
+    <div class="hero-body"><div class="container is-max-desktop article-header">
+      <h1 class="title publication-title">Scaling Video Generation for Reasoning: At What Cost?</h1>
+      <p class="publication-authors"><span><a href="https://www.whguo.me/" target="_blank" rel="noopener noreferrer">Weihang Guo</a><sup>1</sup></span><span><a href="https://nicholas0228.github.io/" target="_blank" rel="noopener noreferrer">Xiaoyu Wu</a><sup>2</sup></span><span><a href="https://a-little-hoof.github.io/" target="_blank" rel="noopener noreferrer">Yifei Wang</a><sup>1</sup></span><span><a href="https://mireshghallah.github.io/" target="_blank" rel="noopener noreferrer">Niloofar Mireshghallah</a><sup>2</sup></span><span><a href="https://profiles.rice.edu/faculty/lydia-e-kavraki" target="_blank" rel="noopener noreferrer">Lydia E. Kavraki</a><sup>1</sup></span></p>
+      <p class="publication-affiliations"><span><sup>1</sup> Rice University</span><span><sup>2</sup> Carnegie Mellon University</span></p>
+      <div class="institution-logos" aria-label="Author institutions">
+        <a href="https://www.rice.edu/" target="_blank" rel="noopener noreferrer"><img class="rice-logo" src="static/logos/rice-shield.svg" alt="Rice University shield" width="298" height="360" decoding="async"></a>
+        <a href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer"><img class="cmu-logo" src="static/logos/cmu-square.png" alt="Carnegie Mellon University" width="600" height="600" decoding="async"></a>
+      </div>
+      <div class="publication-links">
+        <a href="https://arxiv.org/pdf/2609.36599">Paper</a>
+        <a href="https://arxiv.org/abs/2609.36599">arXiv</a>
+        <span class="coming-soon">Code coming soon</span>
+      </div>
+    </div></div>
+  </section>
+
+  <div class="article-introduction container is-max-desktop">
+    <p>Video prediction requires keeping track of things that are temporarily out of view. When an object rotates, for example, its hidden surfaces must return in the right places. We study how well video models learn these changes, and how much training compute they need.</p>
+    <p>Our experiments use a 2 × 2 × 2 Rubik’s Cube, where every sticker position can be checked against the simulator. We compare model sizes and training budgets and find that lower validation loss does not reliably indicate better state accuracy across models. Although scaling improves accuracy, errors persist over complete trajectories. To understand this difficulty, we examine the roles of representation and visibility: predicting sticker colors directly requires far less compute, while making all six faces visible improves video state accuracy. We also introduce symbolic guidance, which improves video state accuracy at the same training-data budget. Our next step is to find a scalable and generalizable symbolic representation.</p>
+    <nav class="article-toc" aria-label="Contents"><p>Contents</p><ol><li><a href="#task">Task and evaluation</a></li><li><a href="#scaling-law">Extrapolating the compute frontier</a></li><li><a href="#predictions">Predictions during training</a></li><li><a href="#findings">Validation loss and state accuracy</a></li><li><a href="#scaling">Training compute and accuracy</a></li><li><a href="#diagnostics">Representation and visibility</a></li><li><a href="#guidance">Symbolic guidance</a></li><li><a href="#open-question">Learning a scalable symbolic representation</a></li></ol></nav>
+  </div>
+
+  <section class="section" id="task"><div class="container is-max-desktop">
+    <div class="section-heading"><h2>Task and evaluation</h2></div>
+    <div class="prose"><p>Each episode starts with a solved 2 × 2 × 2 cube and a prompt containing nine moves. A fixed camera shows three faces, exposing 12 of the 24 stickers. Turns move stickers out of view and bring others back, so predicting a later image requires accounting for changes that were not directly visible.</p><p><mark class="text-highlight">The solved starting configuration and fixed color convention specify the entire initial state, including the hidden faces. Together with the action sequence, they determine every subsequent configuration.</mark> We evaluate the first stationary frame after each move by comparing its visible sticker colors with the simulator state. Unreadable stickers count as errors.</p></div>
+    <dl class="task-facts"><div><dt>Input</dt><dd>Initial image + all nine prescribed moves</dd></div><div><dt>Prediction</dt><dd>80 frames (3.3 s) of future video</dd></div><div><dt>Frame accuracy</dt><dd>Fraction of post-action frames with all 12 visible stickers correct.</dd></div><div><dt>Full-trajectory accuracy</dt><dd>Fraction of episodes with all 12 visible stickers correct after every one of the nine moves.</dd></div></dl>
+    <div class="prose"><p>This is a prediction task: the moves are given, and the model does not have to find a solution. We train diffusion Transformers from 20M to 1B parameters. Autoregressive (AR) models generate successive chunks using their own earlier predictions; bidirectional models denoise the future sequence jointly. The initial image is the only ground-truth video context supplied at evaluation.</p><p>We report training compute in PF-days: one PF-day is 10<sup>15</sup> floating-point operations per second for one day, or 8.64 × 10<sup>19</sup> operations. Training-video counts measure cumulative presentations to the model.</p></div>
+  </div></section>
+
+  <section class="section" id="scaling-law"><div class="container is-max-desktop">
+    <div class="section-heading"><h2>Extrapolating the compute frontier</h2></div>
+      <p>For each compute budget, the frontier keeps the highest accuracy observed up to that budget. We fit the remaining error with a power law, <em>1 − accuracy = A C<sup>−α</sup></em>, where <em>C</em> is training compute in PF-days. Fitting the middle or final third of the frontier gives different estimates of the compute required for higher accuracy.</p>
+      <div class="explorer" id="scaling-playground" hidden>
+        <div class="explorer-controls"><label>Generation<select id="fit-family"><option value="ar">Autoregressive (AR)</option><option value="bidir">Bidirectional</option></select></label><label>Accuracy metric<select id="fit-metric"><option value="frame_accuracy">Frame accuracy</option><option value="full_trajectory">Full-trajectory accuracy</option></select></label><label>Fit region<select id="fit-window"><option value="both">Compare both regions</option><option value="middle">Middle third of frontier</option><option value="final">Final third of frontier</option></select></label></div>
+        <div class="fit-controls"><div><label for="fit-compute">Evaluate at compute <output id="fit-compute-value"></output></label><input id="fit-compute" type="range" min="0" max="1000" value="0" aria-describedby="fit-domain-note"><p class="small-note" id="fit-domain-note">Logarithmic scale. The shaded region contains measured compute budgets.</p></div><div><label for="fit-target">Target accuracy <output id="fit-target-value">98%</output></label><input id="fit-target" type="range" min="50" max="99" value="98" step="1" aria-describedby="fit-target-note"><p class="small-note" id="fit-target-note">Move the target to inspect where each fitted curve reaches it.</p></div></div>
+        <div class="fit-legend" aria-label="Plot legend"><span class="measured-key">Measured checkpoints</span><span class="frontier-key">Compute frontier</span><span class="middle-key">Middle-third fit</span><span class="final-key">Final-third fit</span></div>
+        <div id="fit-chart" class="interactive-chart"></div>
+        <p id="fit-status" class="small-note" role="status"></p>
+        <div class="table-scroll"><table class="fit-readout"><caption id="fit-table-caption">Power-law fit</caption><thead><tr><th scope="col">Fit region</th><th scope="col">α</th><th scope="col">A</th><th scope="col">Accuracy at selected compute</th><th scope="col" id="fit-target-heading">Compute for 98%</th></tr></thead><tbody id="fit-results"></tbody></table></div>
+        <p class="figure-caption">Points are measured checkpoints. Solid colored lines show each fit over its fitting interval; dashed lines show its extension. Changing the controls evaluates the paper’s fitted curves. It does not run a new experiment.</p>
+      </div>
+      <details class="data-details"><summary>Original extrapolation figure</summary><figure class="extrapolation-figure"><a href="static/figures/compute-extrapolation.svg" target="_blank" rel="noopener" aria-label="Open the extrapolation plot at full size"><img src="static/figures/compute-extrapolation.svg" width="720" height="1050" loading="lazy" alt="Compute frontier and power-law extrapolations toward 98 percent accuracy, comparing two fitting windows for AR frame accuracy, AR full-trajectory accuracy, and bidirectional frame accuracy."></a><p class="figure-expand"><a href="static/figures/compute-extrapolation.svg" target="_blank" rel="noopener">Open full-size plot</a></p><figcaption>Gray points show evaluated checkpoints; colored points mark the middle and final thirds of the observed frontier. Solid lines show fits within each window; dashed lines extend those fits. Shading marks the observed compute range, and diamonds mark the projected 98% intersections. Bidirectional full-trajectory accuracy is omitted because it is zero at every evaluated checkpoint.</figcaption></figure></details>
+  </div></section>
+
+  <section class="section teaser" id="predictions" aria-labelledby="teaser-title">
+    <div class="container is-max-desktop">
+      <div class="section-heading"><h2 id="teaser-title">Predictions during training</h2></div>
+      <p>The player opens at the last saved checkpoint of the 270M model, after 500,000 training steps. Use Previous, the step selector, or the upper slider to inspect earlier checkpoints. The initial image, action sequence, and displayed video frame stay fixed when the checkpoint changes.</p>
+      <div class="view-tabs" role="tablist" aria-label="Explore video predictions" hidden>
+        <button type="button" id="training-tab" role="tab" aria-selected="true" aria-controls="rollout-panel">Compare training checkpoints</button>
+        <button type="button" id="rollout-tab" role="tab" aria-selected="false" aria-controls="rollout-panel" tabindex="-1">Other models and examples</button>
+      </div>
+      <div id="rollout-panel" role="tabpanel" aria-labelledby="training-tab">
+      <div id="training-checkpoint-controls" class="training-checkpoint-controls">
+        <div class="checkpoint-heading"><label for="training-checkpoint">Training checkpoint <span>· 270M model</span></label><div class="checkpoint-navigation"><button class="button" id="previous-checkpoint" type="button" aria-label="Previous training checkpoint">Previous</button><select id="training-checkpoint" aria-label="Select a training checkpoint"></select><button class="button" id="next-checkpoint" type="button" aria-label="Next training checkpoint" disabled>Next</button></div></div>
+        <input type="range" id="training-step" min="0" max="14" value="14" step="1" aria-label="Training checkpoint" aria-describedby="training-availability">
+        <div class="range-endpoints"><span>Step 2,048</span><span>Step 500,000</span></div>
+        <p class="small-note" id="training-availability">15 saved checkpoints. The earliest available rollout is at step 2,048; steps 0 and 100 were not saved.</p>
+      </div>
+      <div class="rollout-toolbar"><div><p id="rollout-model">270M model · step 500,000 · 8M training videos · 1.03 PF-days</p><p id="rollout-status" role="status" aria-live="polite">Loading the saved rollout…</p></div><button class="button" id="random-rollout" type="button" hidden disabled>Random</button><button class="button" id="retry-rollout" type="button" hidden>Retry</button></div>
+      <div class="rollout-pair" id="rollout-pair">
+        <figure><figcaption>Ground truth <span>VAE reconstruction</span></figcaption><canvas id="ground-truth" class="video-frame" width="256" height="256" role="img" aria-label="Ground-truth video frame"><img src="static/images/gt-6.webp" width="256" height="256" alt="Ground-truth cube after action 6."></canvas></figure>
+        <figure><figcaption>Generated video <span>AR-k1 · EMA weights</span></figcaption><canvas id="prediction" class="video-frame" width="256" height="256" role="img" aria-label="Generated video frame"><img src="static/images/pred-6.webp" width="256" height="256" alt="Generated cube after action 6."></canvas></figure>
+      </div>
+      <div class="rollout-controls full-frame-controls" id="rollout-controls" hidden>
+        <div class="step-header"><label for="rollout-frame"><output id="rollout-time" for="rollout-frame">Frame 51 / 80 · 2.13 s</output></label><span id="state-score" role="status"></span></div>
+        <div class="playback-row"><button class="play-button" id="rollout-play" type="button" aria-label="Play rollout">Play</button><div class="playback-timeline"><input id="rollout-frame" type="range" min="0" max="80" value="51" step="1" aria-describedby="rollout-caption"><div class="action-buttons boundary-buttons" id="rollout-actions" aria-label="Jump to an action boundary"></div></div></div>
+      </div>
+      <p class="figure-caption" id="rollout-caption">The upper slider selects one of 15 saved training checkpoints. The lower slider moves through all 81 video frames. Red outlines mark incorrect predictions at action boundaries. Ground truth is reconstructed through the frozen video autoencoder (VAE).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="findings"><div class="container is-max-desktop">
+    <div class="section-heading"><h2>Validation loss and state accuracy</h2></div>
+    <div class="prose"><p>The training objective is flow matching: the model predicts the velocity used to transform noise into video latents. Validation mean squared error (MSE) measures errors in that velocity prediction. State accuracy measures the sticker configurations reached in the generated video.</p><p>Lower validation MSE generally accompanies better state accuracy as a given model trains. Across model sizes, however, similar losses can correspond to substantially different accuracies. The comparison at 1.5M training videos provides one example: the larger model has lower MSE but produces fewer correct states. Validation loss alone therefore cannot rank these models by state prediction ability.</p></div>
+    <div class="explorer" id="loss-explorer" hidden>
+      <div class="explorer-controls"><label>Generation<select id="loss-family"><option value="ar">Autoregressive (AR)</option><option value="bidir">Bidirectional</option></select></label><label>Model size (parameters)<select id="loss-model"><option value="all">All model sizes</option><option value="XS">20M</option><option value="S">30M</option><option value="M">70M</option><option value="B">120M</option><option value="L">270M</option><option value="XL">550M</option><option value="XXL">1B</option></select></label><button class="button is-rounded" id="loss-example" type="button">Compare at 1.5M videos</button></div>
+      <div id="loss-legend" class="chart-legend" aria-label="Model sizes in parameters"></div>
+      <div id="loss-chart" class="interactive-chart"></div>
+      <div class="checkpoint-control"><label for="loss-checkpoint">Inspect by validation MSE <span>Checkpoints ordered from low to high MSE.</span></label><input id="loss-checkpoint" type="range" min="0" max="1" value="0"><div class="range-endpoints" aria-hidden="true"><span>Lower MSE</span><span>Higher MSE</span></div></div>
+      <div id="loss-readout" class="result-readout" aria-live="polite"></div>
+      <div id="loss-comparison" class="comparison-note" hidden></div>
+    </div>
+    <noscript><figure class="result-figure"><img src="static/images/loss-accuracy.svg" width="1100" height="440" alt="Validation flow MSE and frame accuracy across AR models."></figure></noscript>
+    <p class="figure-caption">Each point pairs validation loss and free-running accuracy from the same EMA checkpoint. Within a model, lower MSE generally tracks learning progress. Across models, it is not a common scale of reasoning capability.</p>
+  </div></section>
+
+  <section class="section" id="scaling"><div class="container is-max-desktop">
+    <div class="section-heading"><h2>Training compute and accuracy</h2></div>
+    <div class="prose"><p>We vary model size and training duration to compare their contributions to state accuracy. Smaller autoregressive models use limited compute more efficiently, while larger models reach higher accuracy with further training. A full trajectory fails if any of its nine evaluated states is incorrect, so its accuracy is lower than the average accuracy of individual frames.</p></div>
+    <div class="explorer" id="compute-explorer" hidden>
+      <div class="explorer-controls"><label>Generation<select id="compute-family"><option value="ar">Autoregressive (AR)</option><option value="bidir">Bidirectional</option></select></label><label>Correctness criterion<select id="compute-metric"><option value="frame_accuracy">Frame accuracy</option><option value="full_trajectory">Full-trajectory accuracy</option></select></label></div>
+      <div class="budget-heading"><label for="compute-budget">Training budget</label><output id="budget-value" for="compute-budget"></output></div><input type="range" id="compute-budget" min="0" max="1" value="0" aria-describedby="budget-description"><div class="budget-presets"><button type="button" data-budget="0.01">0.01 PF-days</button><button type="button" data-budget="0.1">0.1 PF-days</button><button type="button" data-budget="1">1 PF-day</button><button type="button" data-budget="max">All observed compute</button></div>
+      <p class="small-note" id="budget-description">Curves connect measured checkpoints for each model. The vertical line marks your budget; large dots mark each model’s best measured accuracy within it.</p>
+      <div id="compute-legend" class="chart-legend" aria-label="Model sizes in parameters"></div>
+      <div id="compute-chart" class="interactive-chart"></div>
+      <p class="budget-takeaway" id="budget-takeaway"></p>
+      <details class="data-details"><summary>Inspect the selected checkpoints</summary><div class="table-scroll"><table><thead><tr><th scope="col">Model size</th><th scope="col">Parameters</th><th scope="col">Training videos</th><th scope="col">PF-days</th><th scope="col">Accuracy</th></tr></thead><tbody id="compute-table"></tbody></table></div></details>
+    </div>
+    <noscript><figure class="result-figure"><img src="static/images/compute-accuracy.svg" width="1100" height="440" alt="Observed frame and trajectory accuracy versus training compute."></figure></noscript>
+    <p class="figure-caption">All results use the same 100 held-out episodes and generated history. Frame accuracy requires all 12 visible stickers to be correct at a step; full-trajectory accuracy requires this after every one of the nine moves.</p>
+
+  </div></section>
+
+  <section class="section" id="diagnostics"><div class="container is-max-desktop">
+    <div class="section-heading"><h2>Representation and visibility</h2></div>
+    <article class="diagnostic" id="representation-control">
+      <div class="diagnostic-heading"><span class="diagnostic-index">A</span><h3>Predicting sticker colors directly</h3></div>
+      <div class="prose"><p>We first replace video prediction with prediction of the 12 visible sticker colors. A small Transformer receives the initial visible configuration and the same kind of action-prompt features used by the video models. Partial observation remains: a sticker can disappear and later return, so the model still has to account for intervening moves.</p></div>
+      <figure class="representation-diagram" aria-label="Comparison of video and vector prediction spaces">
+        <div class="diagram-context">Same kind of conditioning: initial observation + prescribed action prompt</div>
+        <div class="representation-lane video-lane">
+          <h4>Video space</h4>
+          <div class="representation-steps">
+            <div class="diagram-node"><div class="frame-stack" aria-hidden="true"><img src="static/images/training-gt.webp" width="256" height="256" loading="lazy" alt=""></div><strong>Video frames</strong><small>Rendered observations</small></div>
+            <div class="diagram-arrow"><span>Frozen<br>Wan VAE</span><b class="arrow-line" aria-hidden="true"></b></div>
+            <div class="diagram-node"><div class="latent-grid" aria-hidden="true"></div><strong>Continuous latents</strong><small>16 × 32 × 32 per latent frame</small></div>
+            <div class="diagram-arrow" aria-hidden="true"><b class="arrow-line"></b></div>
+            <div class="diagram-node model-node"><small>Prediction model</small><strong>Video DiT</strong><small>AR or bidirectional</small></div>
+          </div>
+        </div>
+        <div class="representation-lane vector-lane">
+          <h4>Vector space</h4>
+          <div class="representation-steps">
+            <div class="diagram-node"><div class="sticker-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><strong>Visible sticker colors</strong><small>Simulator labels</small></div>
+            <div class="diagram-arrow"><span>One-hot<br>encoding</span><b class="arrow-line" aria-hidden="true"></b></div>
+            <div class="diagram-node"><div class="categorical-grid" aria-hidden="true"></div><strong>Categorical vectors</strong><small>12 stickers × 6 colors</small></div>
+            <div class="diagram-arrow" aria-hidden="true"><b class="arrow-line"></b></div>
+            <div class="diagram-node model-node"><small>Prediction model</small><strong>State Transformer</strong><small>AR or bidirectional · 2.8M</small></div>
+          </div>
+        </div>
+        <figcaption>A comparison of training representations. The vector model predicts visible sticker colors directly, while the video model predicts continuous video latents.</figcaption>
+      </figure>
+      <div class="prose"><p>These state-only models predict sequences of 20 actions with high accuracy at much lower compute. Their success shows that the cube’s transitions can be learned efficiently in this representation. The additional difficulty appears when those transitions must be represented and generated through video.</p></div>
+      <div class="table-scroll diagnostic-table"><table><caption>Direct state prediction · 20 actions · 10,000 held-out episodes</caption><thead><tr><th scope="col">State model</th><th scope="col">Training PF-days</th><th scope="col">Final-state accuracy</th><th scope="col">Full-trajectory accuracy</th></tr></thead><tbody><tr><th scope="row">AR · 2.8M</th><td>≈ 0.008</td><td>94.01%</td><td>92.81%</td></tr><tr><th scope="row">Bidirectional · 2.8M</th><td>≈ 0.0004</td><td>99.86%</td><td>99.85%</td></tr></tbody></table></div>
+      <p class="small-note">Final-state accuracy requires all visible sticker colors to be correct after move 20. Full-trajectory accuracy requires every predicted state to be correct. These are separate state-only experiments.</p>
+    </article>
+    <article class="diagnostic" id="observation-control">
+      <div class="diagnostic-heading"><span class="diagnostic-index">B</span><h3>Making all six faces visible</h3></div>
+      <div class="prose"><p>We then keep video prediction and add a complementary camera view. Every settled frame now reveals all 24 stickers. The model must predict both views, but it no longer needs earlier observations to recover the current hidden sticker colors.</p><p>The three panels show the same action sequence. The six-face prediction contains both camera views; all panels share the same timeline.</p></div>
+      <div class="observation-player" id="observation-player">
+        <div class="observation-triptych">
+          <figure><figcaption>3-face ground truth<span>Simulator</span></figcaption><canvas class="video-frame" id="observation-gt" width="256" height="256" role="img" aria-label="Three-face simulator ground truth"></canvas></figure>
+          <figure><figcaption>3-face prediction<span>12 visible stickers</span></figcaption><canvas class="video-frame" id="observation-three" width="256" height="256" role="img" aria-label="Three-face video prediction"></canvas><p class="frame-verdict" id="observation-three-score"></p></figure>
+          <figure><figcaption>6-face prediction<span>24 visible stickers</span></figcaption><canvas class="video-frame" id="observation-six" width="512" height="256" role="img" aria-label="Six-face video prediction, two complementary views"></canvas><p class="frame-verdict" id="observation-six-score"></p></figure>
+        </div>
+        <div class="rollout-controls full-frame-controls" id="observation-controls" hidden>
+          <div class="step-header"><label for="observation-frame"><output id="observation-time" for="observation-frame"></output></label><span id="observation-action"></span></div>
+          <div class="playback-row"><button class="play-button" id="observation-play" type="button" aria-label="Play observation comparison">Play</button><div class="playback-timeline"><input id="observation-frame" type="range" min="0" max="80" value="58" step="1" aria-describedby="observation-caption"><div class="action-buttons boundary-buttons" id="observation-actions" aria-label="Jump to a comparison action boundary"></div></div></div>
+        </div>
+        <p class="small-note" id="observation-loading" role="status">Loading the paired observation experiment…</p>
+      </div>
+      <p class="figure-caption" id="observation-caption">A paired rollout from the separate 270M AR-k4 observation experiment, with 7.68M training video presentations per model. Drag through every frame; select a move to compare scored states. Red outlines mark incorrect predictions at action boundaries. The three-face criterion checks 12 stickers; the six-face criterion checks all 24.</p>
+      <figure class="observation-results" id="observation-results" hidden>
+        <div class="observation-chart-heading"><h4>Accuracy across nine actions</h4><span>270M models · 100 paired episodes</span></div>
+        <div class="observation-legend" id="observation-legend" aria-label="Observation and generation settings"></div>
+        <div class="interactive-chart" id="observation-curve-chart"></div>
+        <div class="observation-curve-readout" id="observation-curve-readout" aria-live="polite"></div>
+        <figcaption>Solid lines: AR-k4. Dashed lines: bidirectional. Shading shows pointwise 95% confidence intervals. Frame accuracy requires all 12 visible stickers to be correct for three-face observation, and all 24 for six-face observation. Training exposure is matched between views within each family: 7.68M video presentations for AR-k4 and 1.44M for bidirectional.</figcaption>
+      </figure>
+      <div class="prose"><p>Full observation improves state accuracy, particularly for autoregressive generation. This intervention changes both the available state information and the video prediction target. The result supports the role of partial observation in the difficulty of the task, although it does not isolate a single cause of the improvement.</p></div>
+    </article>
+  </div></section>
+
+  <section class="section" id="guidance"><div class="container is-max-desktop">
+    <div class="section-heading"><h2>Symbolic guidance</h2></div>
+    <div class="prose"><p>The state-only experiment suggests a more direct learning signal for video training. We train the video model to predict sticker colors as well as future video. Before generating a latent frame, the shared Transformer predicts sticker-state distributions from the initial image, action prompt, and available video history. Those distributions condition a separate video pass using the same Transformer weights.</p><p>Simulator states supply training targets. During generation, both the state feedback and the video history come from the model’s own predictions, following the given initial image.</p></div>
+    <figure class="paper-guidance-figure" id="guidance-paper-figure">
+      <a href="static/figures/symbolic-guidance-paper.svg" target="_blank" rel="noopener" aria-label="Open the original paper figure at full size"><img src="static/figures/symbolic-guidance-workflow.svg" width="1470" height="655" loading="lazy" alt="Original paper workflow: video history and the action prompt condition separate state and video passes with shared Transformer weights. Predicted sticker-state probabilities feed back to the video pass. Training combines state cross-entropy and video flow loss."></a>
+      <p class="figure-expand"><a href="static/figures/symbolic-guidance-paper.svg" target="_blank" rel="noopener">Open full-size figure</a></p>
+      <figcaption>Symbolic-guidance training, from the paper. Predicted sticker-state probabilities condition the video pass; both passes share Transformer weights. Training combines state cross-entropy with the video flow objective.</figcaption>
+    </figure>
+    <div class="explorer" id="guidance-explorer" hidden>
+      <fieldset class="method-picker"><legend>Compare symbolic guidance</legend><label><input type="radio" name="guidance-method" value="0"> Video only</label><label><input type="radio" name="guidance-method" value="1" checked> Front12 feedback</label><label><input type="radio" name="guidance-method" value="2"> Full24 feedback</label></fieldset>
+      <div class="guidance-summary"><div><span>Frame accuracy</span><strong id="guidance-average"></strong></div><div><span>Full-trajectory accuracy</span><strong id="guidance-trajectory"></strong></div><p id="guidance-explanation"></p></div>
+      <div id="guidance-chart" class="interactive-chart"></div>
+      <div class="checkpoint-control"><label for="guidance-action">Inspect action <output id="guidance-action-number" for="guidance-action">6</output></label><input type="range" id="guidance-action" min="1" max="9" value="6"></div><div id="guidance-readout" class="result-readout" aria-live="polite"></div>
+    </div>
+    <noscript><figure class="result-figure"><img src="static/images/state-guidance.svg" width="1100" height="440" alt="Symbolic guidance raises average frame accuracy from 31.1 to 67.3 percent with Front12 feedback; Full24 reaches 62.9 percent."></figure></noscript>
+    <p class="figure-caption">20M AR-k1 models, each trained on 3M videos and evaluated on 100 paired episodes using EMA weights. Both guided variants supervise all 24 stickers. Front12 feeds back the 12 visible-sticker distributions; Full24 also feeds back the hidden stickers.</p>
+    <div class="prose"><p>At the same training-data budget, both variants improve the correctness of generated states. Front12 shows that hidden-sticker feedback is not required for this improvement when all stickers are supervised. These experiments test state supervision together with predicted-state feedback; they do not separately identify the contribution of each.</p></div>
+  </div></section>
+
+  <section class="section" id="open-question"><div class="container is-max-desktop">
+    <h2>Open question: Learning a scalable symbolic representation</h2>
+    <div class="closing-prose"><p>Although our targets are discrete sticker colors, our results show that symbolic guidance helps reasoning. The natural next question is: what kind of symbolic representation can generalize across videos, environments, and interactions while capturing how the world changes and how actions update its state?</p>
+    <p>Here, “symbolic” does not necessarily mean “discrete.” Existing approaches, such as <a href="https://arxiv.org/abs/2506.09985">JEPA</a>, offer one direction to investigate. However, designing effective training objectives for such representations remains an open question.</p></div>
+  </div></section>
+
+  <section class="section" id="citation-section"><div class="container is-max-desktop">
+    <div class="citation-heading"><h2>Citation</h2><button class="button is-rounded" id="copy-citation" type="button" hidden>Copy BibTeX</button></div>
+    <pre id="citation">@misc{guo2026scalingvideogenerationreasoning,
+  title={Scaling Video Generation for Reasoning: At What Cost?},
+  author={Weihang Guo and Xiaoyu Wu and Yifei Wang and
+          Niloofar Mireshghallah and Lydia E. Kavraki},
+  year={2026},
+  eprint={2609.36599},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2609.36599}
+}</pre><p id="citation-status" class="small-note" role="status"></p>
+  </div></section>
+</main>
+<footer class="footer"><div class="container is-max-desktop"><p><a href="https://github.com/WeihangGuo/scaling-video-reasoning">Website source</a> · Adapted from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>, itself based in part on <a href="https://nerfies.github.io/">Nerfies</a>. Website template adaptations are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p></div></footer>
+</body>
+</html>

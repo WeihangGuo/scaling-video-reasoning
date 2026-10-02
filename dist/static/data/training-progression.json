@@ -1,0 +1,115 @@
+{
+  "action_number": 4,
+  "action": "L",
+  "model_parameters": 271760656,
+  "reference": "Simulator ground truth",
+  "selection": "First episode/action in evaluation order whose first exact prediction occurs at 4M--5M and remains exact at all later evaluated checkpoints through 8M. Checkpoints minimize variation in logarithmic gaps, retaining endpoints and the first exact prediction.",
+  "reference_note": "Re-rendered from the verified episode and renderer contract; all 12 states and all displayed checkpoint scores verified against the recorded evaluation.",
+  "checkpoints": [
+    {
+      "training_videos": 32768,
+      "training_pf_days": 0.00422299001946112,
+      "correct_stickers": 2,
+      "exact_frame": false,
+      "image": "static/images/training-0.webp"
+    },
+    {
+      "training_videos": 65536,
+      "training_pf_days": 0.00844598003892224,
+      "correct_stickers": 2,
+      "exact_frame": false,
+      "image": "static/images/training-1.webp"
+    },
+    {
+      "training_videos": 131072,
+      "training_pf_days": 0.01689196007784448,
+      "correct_stickers": 4,
+      "exact_frame": false,
+      "image": "static/images/training-2.webp"
+    },
+    {
+      "training_videos": 262144,
+      "training_pf_days": 0.03378392015568896,
+      "correct_stickers": 1,
+      "exact_frame": false,
+      "image": "static/images/training-3.webp"
+    },
+    {
+      "training_videos": 524288,
+      "training_pf_days": 0.06756784031137791,
+      "correct_stickers": 3,
+      "exact_frame": false,
+      "image": "static/images/training-4.webp"
+    },
+    {
+      "training_videos": 786432,
+      "training_pf_days": 0.10135176046706688,
+      "correct_stickers": 2,
+      "exact_frame": false,
+      "image": "static/images/training-5.webp"
+    },
+    {
+      "training_videos": 1000000,
+      "training_pf_days": 0.12887542784,
+      "correct_stickers": 2,
+      "exact_frame": false,
+      "image": "static/images/training-6.webp"
+    },
+    {
+      "training_videos": 1500000,
+      "training_pf_days": 0.19331314176,
+      "correct_stickers": 4,
+      "exact_frame": false,
+      "image": "static/images/training-7.webp"
+    },
+    {
+      "training_videos": 2000000,
+      "training_pf_days": 0.25775085568,
+      "correct_stickers": 11,
+      "exact_frame": false,
+      "image": "static/images/training-8.webp"
+    },
+    {
+      "training_videos": 2500000,
+      "training_pf_days": 0.3221885696,
+      "correct_stickers": 11,
+      "exact_frame": false,
+      "image": "static/images/training-9.webp"
+    },
+    {
+      "training_videos": 3400000,
+      "training_pf_days": 0.438176454656,
+      "correct_stickers": 11,
+      "exact_frame": false,
+      "image": "static/images/training-10.webp"
+    },
+    {
+      "training_videos": 4400000,
+      "training_pf_days": 0.567051882496,
+      "correct_stickers": 12,
+      "exact_frame": true,
+      "image": "static/images/training-11.webp"
+    },
+    {
+      "training_videos": 5400000,
+      "training_pf_days": 0.695927310336,
+      "correct_stickers": 12,
+      "exact_frame": true,
+      "image": "static/images/training-12.webp"
+    },
+    {
+      "training_videos": 6400000,
+      "training_pf_days": 0.824802738176,
+      "correct_stickers": 12,
+      "exact_frame": true,
+      "image": "static/images/training-13.webp"
+    },
+    {
+      "training_videos": 8000000,
+      "training_pf_days": 1.03100342272,
+      "correct_stickers": 12,
+      "exact_frame": true,
+      "image": "static/images/training-14.webp"
+    }
+  ]
+}
